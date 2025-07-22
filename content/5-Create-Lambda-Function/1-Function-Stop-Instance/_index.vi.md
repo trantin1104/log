@@ -185,7 +185,7 @@ def sent_slack(action, action_results):
 - Ở **Name** nhập `dc-common-lambda-auto-stop`
 - Ở **Description** nhập `dc-common-lambda-auto-stop`
 - Chọn **Schedule**
-- Chọn **Next**
+- Chọn **Countinue to create rule**
 
 <p align="center">
   <img src="/images/5/5.1/image5.1.12.png" width="100%">
