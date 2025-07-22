@@ -42,8 +42,8 @@ Giúp người học:
 #### Nội dung chính
 1. [Giới thiệu](1-introduction/)
 1. [Các bước chuẩn bị](2-setup-requirements/)
-2. [Tạo tag cho EC2 instance](3-tag-ec2-instances/)
-3. [Tạo IAM role cho Lambda](4-create-role-for-lambda/)
+2. [Tạo tag cho instance](3-tag-for-instances/)
+3. [Tạo IAM role cho Lambda](4-create-iam-role-for-lambda/)
 4. [Tạo Lambda Function](5-create-lambda-function/)
 5. [Kiểm tra kết quả](6-verify-results/)
 6. [Dọn dẹp tài nguyên](7-cleanup-resources/)

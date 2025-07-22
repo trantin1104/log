@@ -4,7 +4,7 @@
 	"title": " Cấu hình Web-hooks Slack",
 	"tags": [],
 	"description": "",
-	"content": "HƯỚNG DẪN SỬ DỤNG WEB-HOOKS TRÊN SLACK Đầu tiên, hãy đăng nhập vào Slack.com thông qua trình duyệt của bạn. Đây là giao diện chính của Slack sau khi chúng ta đã đăng nhập thành công. Tiếp theo, chúng ta truy cập vào Incoming WebHooks và chọn Add to Slack. Khi bấm vào, bạn sẽ nhận được yêu cầu Create Another Workspace. Hãy nhấn vào nó.\nĐây là giao diện được hiện lên sau khi bạn nhấn vào Create Another Workspace. Nhập tên là aws-lambda-labs và sau đó chọn Following.\nTiếp theo hập tên cảu bạn sao đó bấm Following Bỏ qua bước này nếu bạn chỉ làm 1 mình Hoàn tất "
+	"content": "Hướng dẫn sử dụng WEB-HOOKS trên SLACK Đầu tiên, hãy đăng nhập vào Slack.com thông qua trình duyệt của bạn. Đây là giao diện chính của Slack sau khi chúng ta đã đăng nhập thành công. Tiếp theo, chúng ta truy cập vào Incoming WebHooks và chọn Add to Slack. Khi bấm vào, bạn sẽ nhận được yêu cầu Create Another Workspace. Hãy nhấn vào nó.\nĐây là giao diện được hiện lên sau khi bạn nhấn vào Create Another Workspace. Nhập tên là aws-lambda-labs và sau đó chọn Following.\nTiếp theo hập tên cảu bạn sao đó bấm Following Bỏ qua bước này nếu bạn chỉ làm 1 mình Hoàn tất "
 },
 {
 	"uri": "//localhost:1313/vi/1-introduction/",
@@ -18,14 +18,14 @@
 	"title": " TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA",
 	"tags": [],
 	"description": "",
-	"content": "TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA Tổng quan Trong môi trường sử dụng AWS, Amazon EC2 là một trong những dịch vụ phổ biến và cũng là nguồn chi phí lớn nếu không được quản lý hiệu quả. Workshop “Optimize EC2 Cost with Lambda” được thiết kế nhằm giúp bạn tự động hóa việc quản lý chi phí EC2 bằng cách sử dụng AWS Lambda để tắt các EC2 instance khi không cần thiết – ví dụ ngoài giờ hành chính.\nThông qua workshop này, bạn sẽ học được cách:\nGắn thẻ (tag) cho các EC2 instance để phân biệt instance cần tối ưu. Tạo IAM Role để Lambda có thể kiểm soát EC2. Viết hàm Lambda bật/tắt EC2 tự động theo lịch trình. Kiểm tra kết quả và dọn dẹp tài nguyên. Mục tiêu Giúp người học:\nNắm được cách tích hợp Lambda với EC2. Tối ưu hóa chi phí sử dụng EC2. Tăng tính tự động hóa trong vận hành hạ tầng cloud. Điều kiện cần Để thực hiện workshop này, bạn cần có:\nTài khoản AWS có quyền quản trị (AdministratorAccess). Kiến thức cơ bản về EC2, IAM và Lambda. Trình duyệt web và kết nối Internet ổn định. Nội dung chính Giới thiệu Các bước chuẩn bị Tạo tag cho EC2 instance Tạo IAM role cho Lambda Tạo Lambda Function Kiểm tra kết quả Dọn dẹp tài nguyên "
+	"content": "TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA Tổng quan Trong môi trường sử dụng AWS, Amazon EC2 là một trong những dịch vụ phổ biến và cũng là nguồn chi phí lớn nếu không được quản lý hiệu quả. Workshop “Optimize EC2 Cost with Lambda” được thiết kế nhằm giúp bạn tự động hóa việc quản lý chi phí EC2 bằng cách sử dụng AWS Lambda để tắt các EC2 instance khi không cần thiết – ví dụ ngoài giờ hành chính.\nThông qua workshop này, bạn sẽ học được cách:\nGắn thẻ (tag) cho các EC2 instance để phân biệt instance cần tối ưu. Tạo IAM Role để Lambda có thể kiểm soát EC2. Viết hàm Lambda bật/tắt EC2 tự động theo lịch trình. Kiểm tra kết quả và dọn dẹp tài nguyên. Mục tiêu Giúp người học:\nNắm được cách tích hợp Lambda với EC2. Tối ưu hóa chi phí sử dụng EC2. Tăng tính tự động hóa trong vận hành hạ tầng cloud. Điều kiện cần Để thực hiện workshop này, bạn cần có:\nTài khoản AWS có quyền quản trị (AdministratorAccess). Kiến thức cơ bản về EC2, IAM và Lambda. Trình duyệt web và kết nối Internet ổn định. Nội dung chính Giới thiệu Các bước chuẩn bị Tạo tag cho instance Tạo IAM role cho Lambda Tạo Lambda Function Kiểm tra kết quả Dọn dẹp tài nguyên "
 },
 {
 	"uri": "//localhost:1313/vi/2-setup-requirements/",
 	"title": " CÁC BƯỚC CHUẨN BỊ",
 	"tags": [],
 	"description": "",
-	"content": " Cấu hình Slack Webhooks Tạo VPC Tạo Security Group Tạo IAM Role cho Lambda "
+	"content": " Cấu hình Slack Webhooks Tạo VPC Tạo Security Group Tạo EC2 Instance "
 },
 {
 	"uri": "//localhost:1313/vi/2-setup-requirements/2-create-vpc/",
@@ -42,11 +42,25 @@
 	"content": "Hướng dẫn tạo Security Gruop Trong giao diện VPC Chọn vào Security Group Sau đó chọn Create security gruop Trong Create security group Nhập lambda-lab vào Security gruop name Nhập security group for lambda lab vào Description Trong ô VPC chọn VPC vừa mới tạo Tiếp tục đến phần Inbound rules Chọn vào Add rule Cấu hình Inbound rules và Outbound rules Bấm vào Create security group "
 },
 {
+	"uri": "//localhost:1313/vi/3-tag-for-instances/",
+	"title": " TẠO TAG CHO INSTANCE",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Tag cho Instance Trong giao diện EC2 Chọn Instances Chọn lambda-lab-instance Chọn Actions Chọn Instance settings Chọn Manage tags Trong giao diện Manage tags Chọn vào Add new tag Khi giao diện Add new tag xuất hiện Tại Key, nhập environment_auto Tại Value, nhập true Chọn Save Thông báo thành công "
+},
+{
 	"uri": "//localhost:1313/vi/2-setup-requirements/4-create-ec2-instance/",
 	"title": " Tạo EC2 Instace",
 	"tags": [],
 	"description": "",
-	"content": "Hướng dẫn tạo EC2 Instace Truy cập vào AWS Management Consle Nhập vào tìm EC2 Sau đó hãy bấm vào chọn EC2 Trong giao diện EC2 Chọn Instaces Chọn tiếp Launch Instance Trong giao diện của Launch Instance Trong mục Name nhập lambda-lab-instance Chọn Amazon Linux Chọn Amazon Linux 2023 kernel-6.12 AMI Ở mục Instance type Chọn t2.micro Tiếp theo ở Key pair Chọn Create new key pair Trong giao diện Create key pair Key pair name nhập vào lambda-lab-key chọn Create key pair Trong phần Network settings chọn Edit Tại Edit của Network settings Chọn VPC vừa được tạo Chọn public-subnet vừa tạo Ở Auto-assign public IP chọn Enable Tiếp theo Select existing security group Chọn Security group vừa tạo Khi đã xong, chọn Launch instance Đã tạo EC2 instance thành công "
+	"content": "Hướng dẫn tạo EC2 Instace Truy cập vào AWS Management Consle Nhập vào tìm EC2 Sau đó hãy bấm vào chọn EC2 Trong giao diện EC2 Chọn Instaces Chọn tiếp Launch Instance Trong giao diện của Launch Instance Trong mục Name nhập lambda-lab-instance Chọn Amazon Linux Chọn Amazon Linux 2023 kernel-6.12 AMI Ở mục Instance type Chọn t2.micro Tiếp theo ở Key pair Chọn Create new key pair Trong giao diện Create key pair Key pair name nhập vào lambda-lab-key chọn Create key pair Trong phần Network settings chọn Edit Tại Edit của Network settings Chọn VPC vừa được tạo Chọn public-subnet vừa tạo Ở Auto-assign public IP chọn Enable Tiếp theo Select existing security group Chọn Security group vừa tạo Khi đã xong, chọn Launch instance Đã tạo EC2 instance thành công Note: Sau khi tạo EC2 instance, cần đợi vài phút để instance chuyển sang trạng thái running và các dịch vụ bên trong khởi chạy hoàn tất. Lúc đó mới có thể SSH hoặc truy cập web server (nếu có).\n"
+},
+{
+	"uri": "//localhost:1313/vi/4-create-iam-role-for-lambda/",
+	"title": " TẠO IAM ROLE CHO LAMBDA",
+	"tags": [],
+	"description": "",
+	"content": "Tạo IAM Role cho Lambda Truy cập vào AWS Management Consle Nhập vào tìm IAM Sau đó hãy bấm vào chọn IAM "
 },
 {
 	"uri": "//localhost:1313/vi/categories/",

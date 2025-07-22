@@ -15,6 +15,19 @@
                 href="//localhost:1313/2-setup-requirements/1-configure-slack-webhooks/"
                 />
   </url><url>
+    <loc>//localhost:1313/5-create-lambda-function/1-function-stop-instance/</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-create-lambda-function/1-function-stop-instance/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-create-lambda-function/1-function-stop-instance/"
+                />
+  </url><url>
     <loc>//localhost:1313/1-introduction/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -65,6 +78,71 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/2-setup-requirements/"
+                />
+  </url><url>
+    <loc>//localhost:1313/3-tag-for-instances/</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/3-tag-for-instances/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/3-tag-for-instances/"
+                />
+  </url><url>
+    <loc>//localhost:1313/2-setup-requirements/3-create-security-gruop/</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-setup-requirements/3-create-security-gruop/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-setup-requirements/3-create-security-gruop/"
+                />
+  </url><url>
+    <loc>//localhost:1313/2-setup-requirements/4-create-ec2-instance/</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-setup-requirements/4-create-ec2-instance/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-setup-requirements/4-create-ec2-instance/"
+                />
+  </url><url>
+    <loc>//localhost:1313/4-create-iam-role-for-lambda/</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-create-iam-role-for-lambda/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-create-iam-role-for-lambda/"
+                />
+  </url><url>
+    <loc>//localhost:1313/5-create-lambda-function/</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-create-lambda-function/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-create-lambda-function/"
                 />
   </url><url>
     <loc>//localhost:1313/categories/</loc>

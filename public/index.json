@@ -1,5 +1,19 @@
 [
 {
+	"uri": "//localhost:1313/2-setup-requirements/1-configure-slack-webhooks/",
+	"title": " Configure Slack Web-hooks",
+	"tags": [],
+	"description": "",
+	"content": "Guide to using WEB-HOOKS on SLACK First, log in to Slack.com via your browser. This is the main interface of Slack after successful login. Next, access Incoming WebHooks and click Add to Slack. When clicked, you’ll be prompted to Create Another Workspace. Click on it.\nThis is the interface that appears after clicking Create Another Workspace. Enter the name aws-lambda-labs and then select Following.\nNext, enter your name and click Following. Skip this step if you are working alone. Done. "
+},
+{
+	"uri": "//localhost:1313/5-create-lambda-function/1-function-stop-instance/",
+	"title": " Function stop instance",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "//localhost:1313/1-introduction/",
 	"title": " INTRODUCTION",
 	"tags": [],
@@ -11,42 +25,56 @@
 	"title": " OPTIMIZE COST WITH LAMBDA",
 	"tags": [],
 	"description": "",
-	"content": "OPTIMIZE COST WITH LAMBDA Overview In an AWS environment, Amazon EC2 is one of the most widely used services—and also a major source of cost if not managed effectively. The “Optimize EC2 Cost with Lambda” workshop is designed to help you automate EC2 cost management by using AWS Lambda to shut down EC2 instances when they are not needed—such as outside business hours.\nThrough this workshop, you will learn how to:\nTag EC2 instances to identify which ones should be optimized. Create an IAM Role that allows Lambda to control EC2. Write a Lambda function to automatically start/stop EC2 instances based on a schedule. Verify the results and clean up resources. Objectives This workshop helps participants:\nUnderstand how to integrate Lambda with EC2. Optimize EC2 usage costs. Increase automation in cloud infrastructure operations. Requirements To complete this workshop, you’ll need:\nAn AWS account with AdministratorAccess permissions. Basic knowledge of EC2, IAM, and Lambda. A web browser and stable internet connection. Workshop Modules Introduction Setup Requirements Tag EC2 Instances Create IAM Role for Lambda Create Lambda Function Verify Results Clean Up Resources "
+	"content": "OPTIMIZE COST WITH LAMBDA Overview In an AWS environment, Amazon EC2 is one of the most widely used services—and also a major source of cost if not managed effectively. The “Optimize EC2 Cost with Lambda” workshop is designed to help you automate EC2 cost management by using AWS Lambda to shut down EC2 instances when they are not needed—such as outside business hours.\nThrough this workshop, you will learn how to:\nTag EC2 instances to identify which ones should be optimized. Create an IAM Role that allows Lambda to control EC2. Write a Lambda function to automatically start/stop EC2 instances based on a schedule. Verify the results and clean up resources. Objectives This workshop helps participants:\nUnderstand how to integrate Lambda with EC2. Optimize EC2 usage costs. Increase automation in cloud infrastructure operations. Requirements To complete this workshop, you’ll need:\nAn AWS account with AdministratorAccess permissions. Basic knowledge of EC2, IAM, and Lambda. A web browser and stable internet connection. Workshop Modules Introduction Setup Requirements Create Tag For Instances Create IAM Role for Lambda Create Lambda Function Verify Results Clean Up Resources "
 },
 {
-	"uri": "//localhost:1313/2-setup-requirements/1-configure-slack-webhooks/",
-	"title": "Configure Slack Web-hooks",
+	"uri": "//localhost:1313/2-setup-requirements/2-create-vpc/",
+	"title": " Create VPC",
 	"tags": [],
 	"description": "",
-	"content": "GUIDE TO USING WEB-HOOKS ON SLACK First, log in to Slack.com via your browser. This is the main interface of Slack after successful login. Next, access Incoming WebHooks and click Add to Slack. When clicked, you’ll be prompted to Create Another Workspace. Click on it.\nThis is the interface that appears after clicking Create Another Workspace. Enter the name aws-lambda-labs and then select Following.\nNext, enter your name and click Following. Skip this step if you are working alone. Done. "
+	"content": "Guide to Creating a VPC Go to the AWS Management Console Type VPC in the search bar Then click on VPC In the VPC interface: First, select Your VPCs Click on Create VPC In the Create VPC interface: Select VPC and more Enter lambda-lab as the name Scroll to the bottom and click Create VPC Click on View VPC VPC has been successfully created Next, in the VPC interface: Select Subnets Click on the public subnet Click Actions Finally, select Edit subnet settings Check the box for Enable auto-assign public IPv4 address, then click Save Successfully enabled "
 },
 {
 	"uri": "//localhost:1313/2-setup-requirements/",
 	"title": " SETUP REQUIREMENTS",
 	"tags": [],
 	"description": "",
-	"content": "SETUP REQUIREMENTS CONFIGURE SLACK WEBHOOKS Setup Requirements Create Security Group Create IAM Role for Lambda "
+	"content": "SETUP REQUIREMENTS Configure Slack Webhooks Create VPC Create Security Group Create EC2 Instance "
 },
 {
-	"uri": "//localhost:1313/2-setup-requirements/2-create-vpc/",
-	"title": "Create VPC",
+	"uri": "//localhost:1313/3-tag-for-instances/",
+	"title": " ADD TAG TO INSTANCE",
 	"tags": [],
 	"description": "",
-	"content": "Guide to Creating a VPC Go to the AWS Management Console Type VPC in the search bar Then click on VPC In the VPC interface: First, select Your VPCs Click on Create VPC In the Create VPC interface: Select VPC and more Enter lambda-lab as the name Scroll to the bottom and click Create VPC Click on View VPC VPC has been successfully created Next, in the VPC interface: Select Subnets Click on the public subnet Click Actions Finally, select Edit subnet settings Check the box for Enable auto-assign public IPv4 address, then click Save Successfully enabled "
+	"content": "Add Tag to Instance In the EC2 interface: Select Instances Select lambda-lab-instance Click Actions Choose Instance settings Then select Manage tags In the Manage tags screen: Click Add new tag When the Add new tag interface appears: In the Key field, enter environment_auto In the Value field, enter true Then click Save Success message displayed "
 },
 {
 	"uri": "//localhost:1313/2-setup-requirements/3-create-security-gruop/",
-	"title": "Create Security Group",
+	"title": " Create Security Group",
 	"tags": [],
 	"description": "",
 	"content": "Guide to Creating a Security Group In the VPC interface: Select Security Groups Then click Create security group In the Create security group screen: Enter lambda-lab for the Security group name Enter security group for lambda lab for the Description In the VPC field, select the VPC you just created Continue to the Inbound rules section: Click Add rule Configure Inbound rules and Outbound rules Click Create security group "
 },
 {
 	"uri": "//localhost:1313/2-setup-requirements/4-create-ec2-instance/",
-	"title": "",
+	"title": " Create EC2 Instance",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Guide to Creating an EC2 Instance Go to the AWS Management Console Search for EC2 Then click on EC2 In the EC2 interface: Select Instances Then click on Launch Instance In the Launch Instance interface: In the Name field, enter lambda-lab-instance Choose Amazon Linux Select Amazon Linux 2023 kernel-6.12 AMI Under Instance type: Choose t2.micro Next, under Key pair: Select Create new key pair In the Create key pair screen: Enter lambda-lab-key for Key pair name Click Create key pair In the Network settings section: Click Edit In the Edit section of Network settings: Select the VPC you created earlier Select the public subnet you created Under Auto-assign public IP, choose Enable Then choose Select existing security group Select the Security Group you created Once completed, click Launch instance The EC2 instance has been successfully created Note: After creating the EC2 instance, wait a few minutes for the instance to enter the \u0026ldquo;running\u0026rdquo; state and for internal services to fully start. Only then should you SSH into it or access any hosted web server (if applicable).\n"
+},
+{
+	"uri": "//localhost:1313/4-create-iam-role-for-lambda/",
+	"title": " CREATE IAM ROLE FOR LAMBDA",
+	"tags": [],
+	"description": "",
+	"content": "Create IAM Role for Lambda Go to the AWS Management Console Search for IAM Then click on IAM In the IAM interface: Click on Roles Then click Create role in the Roles interface In the Select trusted entity screen: Under Trusted entity type, select AWS service For Use case, select Lambda Then click Next Next, in the Add permissions screen: Search for CloudWatchFullAccess Select CloudWatchFullAccess Continue the same steps: Search for CloudWatchFullAccess Select CloudWatchFullAccess Then click Next In the Name, review, and create screen: Enter dc-common-lambda-role for Role name Scroll down to Step 2: Add permissions: Check the Policy name in the Permissions policy summary After verifying, click Create role The role for the Lambda Function has been successfully created "
+},
+{
+	"uri": "//localhost:1313/5-create-lambda-function/",
+	"title": " CREATE LAMBDA FUNCTION",
+	"tags": [],
+	"description": "",
+	"content": "Create Lambda Function Next, we’ll practice creating two Lambda functions — a crucial step in deploying the system.\nCreate a Lambda Function to stop instances Create a Lambda Function to start instances "
 },
 {
 	"uri": "//localhost:1313/categories/",

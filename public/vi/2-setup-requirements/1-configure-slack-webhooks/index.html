@@ -12,21 +12,21 @@
     <title> Cấu hình Web-hooks Slack :: Tạo mới tài khoản AWS</title>
 
     
-    <link href="/css/nucleus.css?1753158592" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753158592" rel="stylesheet">
-    <link href="/css/hybrid.css?1753158592" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753158592" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753158592" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753158592" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753158592" rel="stylesheet">
-    <link href="/css/theme.css?1753158592" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753158592" rel="stylesheet">
+    <link href="/css/nucleus.css?1753177079" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753177079" rel="stylesheet">
+    <link href="/css/hybrid.css?1753177079" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753177079" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753177079" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753177079" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753177079" rel="stylesheet">
+    <link href="/css/theme.css?1753177079" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753177079" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753158592" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753177079" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753158592"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753177079"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,15 +57,15 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753158592"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753158592"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753177079"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753177079"></script>
 
 <script type="text/javascript">
     var baseurl = "\/\/localhost:1313\/\/vi";
 </script>
 
 
-<script type="text/javascript" src="/js/search.js?1753158592"></script>
+<script type="text/javascript" src="/js/search.js?1753177079"></script>
 
     
   </div>
@@ -230,7 +230,125 @@
         
         ">
       <a href="/vi/2-setup-requirements/4-create-ec2-instance/">
-          <b>2.3</b> Tạo EC2 Instace
+          <b>2.4</b> Tạo EC2 Instace
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-tag-for-instances/" title=" TẠO TAG CHO INSTANCE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-tag-for-instances/">
+          <b>3.</b> TẠO TAG CHO INSTANCE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-create-iam-role-for-lambda/" title=" TẠO IAM ROLE CHO LAMBDA" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-create-iam-role-for-lambda/">
+          <b>4.</b> TẠO IAM ROLE CHO LAMBDA
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-create-lambda-function/" title=" TẠO LAMBDA FUNCTION" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-create-lambda-function/">
+          <b>5.</b> TẠO LAMBDA FUNCTION
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-create-lambda-function/1-function-stop-instance/" title=" Function stop instance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-create-lambda-function/1-function-stop-instance/">
+          <b>5.1</b> Function stop instance
           
             <i class="fas fa-check read-icon"></i>
           
@@ -406,7 +524,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#hướng-dẫn-sử-dụng-web-hooks-trên-slack">HƯỚNG DẪN SỬ DỤNG WEB-HOOKS TRÊN SLACK</a></li>
+    <li><a href="#hướng-dẫn-sử-dụng-web-hooks-trên-slack">Hướng dẫn sử dụng WEB-HOOKS trên SLACK</a></li>
   </ul>
 </nav>
     </div>
@@ -432,24 +550,24 @@
 
 
 
-	<h2 id="hướng-dẫn-sử-dụng-web-hooks-trên-slack">HƯỚNG DẪN SỬ DỤNG WEB-HOOKS TRÊN SLACK</h2>
+	<h2 id="hướng-dẫn-sử-dụng-web-hooks-trên-slack">Hướng dẫn sử dụng WEB-HOOKS trên SLACK</h2>
 <ol>
 <li>Đầu tiên, hãy đăng nhập vào <a href="https://slack.com">Slack.com</a> thông qua trình duyệt của bạn.</li>
 </ol>
 <p align="center">
-  <img src="/images/2/2.1/image2.1.1.png" width="70%">
+  <img src="/images/2/2.1/image2.1.1.png" width="100%">
 </p>
 <ol start="2">
 <li>Đây là giao diện chính của Slack sau khi chúng ta đã đăng nhập thành công.</li>
 </ol>
 <p align="center">
-  <img src="/images/2/2.1/image2.1.2.png" width="70%">
+  <img src="/images/2/2.1/image2.1.2.png" width="100%">
 </p>
 <ol start="3">
 <li>Tiếp theo, chúng ta truy cập vào <a href="https://awslambdalabs-jdo4875.slack.com/marketplace/A0F7XDUAZ-webhooks-entrants">Incoming WebHooks</a> và chọn <strong>Add to Slack</strong>.</li>
 </ol>
 <p align="center">
-  <img src="/images/2/2.1/image2.1.3.png" width="70%">
+  <img src="/images/2/2.1/image2.1.3.png" width="100%">
 </p>
 <ol start="4">
 <li>
@@ -460,25 +578,25 @@
 </li>
 </ol>
 <p align="center">
-  <img src="/images/2/2.1/image2.1.5.png" width="70%">
+  <img src="/images/2/2.1/image2.1.5.png" width="100%">
 </p>
 <ol start="6">
 <li>Tiếp theo hập tên cảu bạn sao đó bấm <strong>Following</strong></li>
 </ol>
 <p align="center">
-  <img src="/images/2/2.1/image2.1.6.png" width="70%">
+  <img src="/images/2/2.1/image2.1.6.png" width="100%">
 </p>
 <ol start="7">
 <li>Bỏ qua bước này nếu bạn chỉ làm 1 mình</li>
 </ol>
 <p align="center">
-  <img src="/images/2/2.1/image2.1.7.png" width="70%">
+  <img src="/images/2/2.1/image2.1.7.png" width="100%">
 </p>
 <ol start="8">
 <li>Hoàn tất</li>
 </ol>
 <p align="center">
-  <img src="/images/2/2.1/image2.1.8.png" width="70%">
+  <img src="/images/2/2.1/image2.1.8.png" width="100%">
 </p>
 
 
@@ -621,6 +739,72 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -643,19 +827,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753158592"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753158592"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753158592"></script>
-    <script src="/js/jquery.sticky.js?1753158592"></script>
-    <script src="/js/featherlight.min.js?1753158592"></script>
-    <script src="/js/highlight.pack.js?1753158592"></script>
+    <script src="/js/clipboard.min.js?1753177079"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753177079"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753177079"></script>
+    <script src="/js/jquery.sticky.js?1753177079"></script>
+    <script src="/js/featherlight.min.js?1753177079"></script>
+    <script src="/js/highlight.pack.js?1753177079"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753158592"></script>
-    <script src="/js/learn.js?1753158592"></script>
-    <script src="/js/hugo-learn.js?1753158592"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753177079"></script>
+    <script src="/js/learn.js?1753177079"></script>
+    <script src="/js/hugo-learn.js?1753177079"></script>
 
-    <link href="/mermaid/mermaid.css?1753158592" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753158592"></script>
+    <link href="/mermaid/mermaid.css?1753177079" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753177079"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

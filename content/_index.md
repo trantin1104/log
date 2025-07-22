@@ -42,8 +42,8 @@ To complete this workshop, you’ll need:
 
 1. [Introduction](1-introduction/)
 2. [Setup Requirements](2-setup-requirements/)
-3. [Tag EC2 Instances](3-tag-ec2-instances/)
-4. [Create IAM Role for Lambda](4-create-role-for-lambda/)
+3. [Create Tag For Instances](3-tag-for-instances/)
+4. [Create IAM Role for Lambda](4-create-iam-role-for-lambda/)
 5. [Create Lambda Function](5-create-lambda-function/)
 6. [Verify Results](6-verify-results/)
 7. [Clean Up Resources](7-cleanup-resources/)
