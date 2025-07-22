@@ -3,30 +3,30 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.148.1">
     <meta name="description" content="">
-<meta name="author" content="journeyoftheaverageguy@gmail.com">
+<meta name="author" content="trantrongtin11042000@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Thiết lập Tài Khoản AWS :: Tạo mới tài khoản AWS</title>
+    <title> TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA :: Tạo mới tài khoản AWS</title>
 
     
-    <link href="/css/nucleus.css?1725679656" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1725679656" rel="stylesheet">
-    <link href="/css/hybrid.css?1725679656" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1725679656" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1725679656" rel="stylesheet">
-    <link href="/css/auto-complete.css?1725679656" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1725679656" rel="stylesheet">
-    <link href="/css/theme.css?1725679656" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1725679656" rel="stylesheet">
+    <link href="/css/nucleus.css?1753158592" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753158592" rel="stylesheet">
+    <link href="/css/hybrid.css?1753158592" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753158592" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753158592" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753158592" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753158592" rel="stylesheet">
+    <link href="/css/theme.css?1753158592" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753158592" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1725679656" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753158592" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1725679656"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753158592"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,15 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1725679656"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1725679656"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753158592"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753158592"></script>
+
 <script type="text/javascript">
-    
-        var baseurl = "\/\/localhost:1313\/\/vi";
-    
+    var baseurl = "\/\/localhost:1313\/\/vi";
 </script>
-<script type="text/javascript" src="/js/search.js?1725679656"></script>
+
+
+<script type="text/javascript" src="/js/search.js?1753158592"></script>
 
     
   </div>
@@ -82,13 +83,13 @@
  
   
     
-    <li data-nav-id="/vi/1-create-new-aws-account/" title="Tạo mới tài khoản AWS" class="dd-item 
+    <li data-nav-id="/vi/1-introduction/" title=" GIỚI THIỆU" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-create-new-aws-account/">
-           <b> 1. </b> Tạo mới tài khoản AWS
+      <a href="/vi/1-introduction/">
+          <b>1.</b> GIỚI THIỆU
           
             <i class="fas fa-check read-icon"></i>
           
@@ -108,13 +109,13 @@
  
   
     
-    <li data-nav-id="/vi/2-mfa-setup-for-aws-user-root/" title="MFA cho Tài khoản AWS" class="dd-item 
+    <li data-nav-id="/vi/2-setup-requirements/" title=" CÁC BƯỚC CHUẨN BỊ" class="dd-item 
         
         
         
         ">
-      <a href="/vi/2-mfa-setup-for-aws-user-root/">
-           <b> 2. </b> MFA cho Tài khoản AWS
+      <a href="/vi/2-setup-requirements/">
+          <b>2.</b> CÁC BƯỚC CHUẨN BỊ
           
             <i class="fas fa-check read-icon"></i>
           
@@ -139,13 +140,13 @@
  
   
     
-    <li data-nav-id="/vi/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Thiết bị MFA ảo" class="dd-item 
+    <li data-nav-id="/vi/2-setup-requirements/1-configure-slack-webhooks/" title=" Cấu hình Web-hooks Slack" class="dd-item 
         
         
         
         ">
-      <a href="/vi/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/">
-           <b> 2.1 </b> Thiết bị MFA ảo
+      <a href="/vi/2-setup-requirements/1-configure-slack-webhooks/">
+          <b>2.1</b> Cấu hình Web-hooks Slack
           
             <i class="fas fa-check read-icon"></i>
           
@@ -167,13 +168,13 @@
  
   
     
-    <li data-nav-id="/vi/2-mfa-setup-for-aws-user-root/2-u2f-security-key/" title="Khóa bảo mật U2F" class="dd-item 
+    <li data-nav-id="/vi/2-setup-requirements/2-create-vpc/" title=" Tạo VPC" class="dd-item 
         
         
         
         ">
-      <a href="/vi/2-mfa-setup-for-aws-user-root/2-u2f-security-key/">
-           <b> 2.2 </b> Khóa bảo mật U2F
+      <a href="/vi/2-setup-requirements/2-create-vpc/">
+          <b>2.2</b> Tạo VPC
           
             <i class="fas fa-check read-icon"></i>
           
@@ -195,13 +196,41 @@
  
   
     
-    <li data-nav-id="/vi/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/" title="Thiết bị MFA cứng" class="dd-item 
+    <li data-nav-id="/vi/2-setup-requirements/3-create-security-gruop/" title=" Tạo Security Group" class="dd-item 
         
         
         
         ">
-      <a href="/vi/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/">
-           <b> 2.3 </b> Thiết bị MFA cứng
+      <a href="/vi/2-setup-requirements/3-create-security-gruop/">
+          <b>2.3</b> Tạo Security Group
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-setup-requirements/4-create-ec2-instance/" title=" Tạo EC2 Instace" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-setup-requirements/4-create-ec2-instance/">
+          <b>2.3</b> Tạo EC2 Instace
           
             <i class="fas fa-check read-icon"></i>
           
@@ -216,58 +245,6 @@
           
         
         </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/3-create-admin-user-and-group/" title="Tạo Admin Group và Admin User" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/3-create-admin-user-and-group/">
-           <b> 3. </b> Tạo Admin Group và Admin User
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/4-verify-new-account/" title="Hỗ trợ Xác thực Tài khoản" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/4-verify-new-account/">
-           <b> 4. </b> Hỗ trợ Xác thực Tài khoản
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
               
     </li>
   
@@ -296,10 +273,12 @@
     
 
     
+
     <section id="prefooter">
       <hr/>
       <ul>
       
+
         <li>
           <a class="padding">
             <i class="fas fa-language fa-fw"></i>
@@ -353,29 +332,24 @@
     </section>
     
     <section id="footer">
-      <left>
-    
-     <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
-     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
-     
-</left>
-<left>
-    <br>
-    <br>
-        <b> Last Updated </b> <br>
-        <i><font color=orange>26-11-2023</font></i>
-    </left>
-    <left>
-        <br>
-        <br>
-            <b> Team </b> <br>
-           
-            <i>
-                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
-        </i>
-        </left>
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; font-size: 14px; margin-top: 20px; color: #ccc;">
+  <div>
+    <b>Workshop</b><br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" alt="web counter" border="0" /><br>
+    <b><a href="https://cloudjourney.awsstudygroup.com/" style="color: orange;">Cloud Journey</a></b><br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total Cloud Journey" alt="web counter" border="0" />
+  </div>
+
+  <div>
+    <b>Last Updated</b><br>
+    <i style="color: orange;">2025</i>
+  </div>
+
+  <div>
+    <b>Team</b><br>
+    <i><a href="https://www.linkedin.com/in/jotaguy" style="color: orange;">Trần Trọng Tín</a></i>
+  </div>
+</div>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -404,31 +378,42 @@
 </span>
 
  
-<h1 id="tạo-tài-khoản-aws-đầu-tiên">Tạo tài khoản AWS đầu tiên</h1>
+<h1 id="tối-ưu-hóa-chi-phí-với-lambda">TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA</h1>
 <h4 id="tổng-quan">Tổng quan</h4>
-<p>Trong bài lab đầu tiên này, bạn sẽ tạo mới <strong>tài khoản AWS</strong> đầu tiên của mình, tạo <strong>MFA</strong> (Multi-factor Authentication) để gia tăng bảo mật tài khoản của bạn. Bước tiếp theo bạn sẽ tạo <strong>Admin Group</strong>, <strong>Admin User</strong> để quản lý quyền truy cập vào các tài nguyên trong tài khoản của mình thay vì sử dụng user root.<br>
-Cuối cùng, nếu quá trình xác thực tài khoản của bạn có vấn đề, bạn sẽ được hướng dẫn hỗ trợ xác thực tài khoản với <strong>AWS Support</strong>.</p>
-<h4 id="tài-khoản-aws-aws-account">Tài khoản AWS (AWS Account)</h4>
-<p><strong>Tài khoản AWS</strong> là phương tiện để bạn có thể truy cập và sử dụng những tài nguyên và dịch vụ của AWS. Theo mặc định, mỗi tài khoản AWS sẽ có một <em>root user</em>. <em>Root user</em> có toàn quyền với tài khoản AWS của bạn, và quyền hạn của root user không thể bị giới hạn. Nếu bạn mới sử dụng tài khoản AWS lần đầu tiên, bạn sẽ truy cập vào tài khoản dưới danh nghĩa của <em>root user</em>.</p>
-<p><img alt="Create Account" src="/images/1/0001.png?featherlight=false&width=90pc"></p>
-
-<div class="notices note" ><p>Chính vì quyền hạn của <strong>root user</strong> không thể bị giới hạn, AWS khuyên bạn không nên sử dụng trực tiếp <em>root user</em> cho bất kỳ công tác nào. Thay vào đó, bạn nên tạo ra một <em>IAM User</em> và trao quyền quản trị cho <em>IAM User</em> đó để dễ dàng quản lý và giảm thiểu rủi ro.</p>
-</div>
-
-<h4 id="mfa-multi-factor-authentication">MFA (Multi-factor Authentication)</h4>
-<p><strong>MFA</strong> là một tính năng được sử dụng để gia tăng bảo mật của tài khoản AWS. Nếu MFA được kích hoạt, bạn sẽ phải nhập mã OTP (One-time Password) mỗi lần bạn đăng nhập vào tài khoản AWS.</p>
-<h4 id="iam-group">IAM Group</h4>
-<p><strong>IAM Group</strong>  là một công cụ quản lý người dùng (<em>IAM User</em>) của AWS. Một IAM Group có thể chứa nhiều IAM User. Các IAM User ở trong một IAM Group đều hưởng chung quyền hạn mà IAM Group đó được gán cho.</p>
-<h4 id="iam-user">IAM User</h4>
-<p><strong>IAM User</strong> là một đơn vị người dùng của AWS. Khi bạn đăng nhập vào AWS, bạn sẽ phải đăng nhập dưới danh nghĩa của một IAM User. Nếu bạn mới đăng nhập vào AWS lần đầu tiên, bạn sẽ đăng nhập dưới danh nghĩa của <em>root user</em> (tạm dịch là người dùng gốc). Ngoài <em>root user</em> ra, bạn có thể tạo ra nhiều IAM User khác để cho phép người khác truy cập <strong>dài hạn</strong> vào tài nguyên AWS trong tài khoản AWS của bạn.</p>
-<h4 id="aws-support">AWS Support</h4>
-<p><strong>AWS Support</strong> là một đơn vị cung cấp các dịch vụ hỗ trợ khách hàng của AWS.</p>
+<p>Trong môi trường sử dụng AWS, Amazon EC2 là một trong những dịch vụ phổ biến và cũng là nguồn chi phí lớn nếu không được quản lý hiệu quả. Workshop <strong>“Optimize EC2 Cost with Lambda”</strong> được thiết kế nhằm giúp bạn tự động hóa việc quản lý chi phí EC2 bằng cách sử dụng AWS Lambda để tắt các EC2 instance khi không cần thiết – ví dụ ngoài giờ hành chính.</p>
+<p align="center">
+  <img src="/images/index/image.png" width="70%">
+</p>
+<p>Thông qua workshop này, bạn sẽ học được cách:</p>
+<ul>
+<li>Gắn thẻ (tag) cho các EC2 instance để phân biệt instance cần tối ưu.</li>
+<li>Tạo IAM Role để Lambda có thể kiểm soát EC2.</li>
+<li>Viết hàm Lambda bật/tắt EC2 tự động theo lịch trình.</li>
+<li>Kiểm tra kết quả và dọn dẹp tài nguyên.</li>
+</ul>
+<h4 id="mục-tiêu">Mục tiêu</h4>
+<p>Giúp người học:</p>
+<ul>
+<li>Nắm được cách tích hợp Lambda với EC2.</li>
+<li>Tối ưu hóa chi phí sử dụng EC2.</li>
+<li>Tăng tính tự động hóa trong vận hành hạ tầng cloud.</li>
+</ul>
+<h4 id="điều-kiện-cần">Điều kiện cần</h4>
+<p>Để thực hiện workshop này, bạn cần có:</p>
+<ul>
+<li>Tài khoản AWS có quyền quản trị (AdministratorAccess).</li>
+<li>Kiến thức cơ bản về EC2, IAM và Lambda.</li>
+<li>Trình duyệt web và kết nối Internet ổn định.</li>
+</ul>
 <h4 id="nội-dung-chính">Nội dung chính</h4>
 <ol>
-<li><a href="/vi/1-create-new-aws-account/">Tạo tài khoản AWS</a></li>
-<li><a href="/vi/2-mfa-setup-for-aws-user-root/">Thiết lập MFA cho tài khoản AWS (Root)</a></li>
-<li><a href="/vi/3-create-admin-user-and-group/">Tài khoản và Nhóm Admin</a></li>
-<li><a href="/vi/4-verify-new-account/">Hỗ trợ Xác thực Tài khoản</a></li>
+<li><a href="/vi/1-introduction/">Giới thiệu</a></li>
+<li><a href="/vi/2-setup-requirements/">Các bước chuẩn bị</a></li>
+<li><a href="3-tag-ec2-instances/">Tạo tag cho EC2 instance</a></li>
+<li><a href="4-create-role-for-lambda/">Tạo IAM role cho Lambda</a></li>
+<li><a href="5-create-lambda-function/">Tạo Lambda Function</a></li>
+<li><a href="6-verify-results/">Kiểm tra kết quả</a></li>
+<li><a href="7-cleanup-resources/">Dọn dẹp tài nguyên</a></li>
 </ol>
 	
   
@@ -540,25 +525,6 @@ Cuối cùng, nếu quá trình xác thực tài khoản của bạn có vấn �
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -577,6 +543,9 @@ Cuối cùng, nếu quá trình xác thực tài khoản của bạn có vấn �
                     
             
         
+                    
+            
+        
         
         
 
@@ -584,8 +553,10 @@ Cuối cùng, nếu quá trình xác thực tài khoản của bạn có vấn �
 	 
 	 
 		
+			<a class="nav nav-prev" href="/vi/2-setup-requirements/4-create-ec2-instance/" title=" Tạo EC2 Instace"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/vi/1-create-new-aws-account/" title="Tạo mới tài khoản AWS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/vi/1-introduction/" title=" GIỚI THIỆU" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -595,19 +566,19 @@ Cuối cùng, nếu quá trình xác thực tài khoản của bạn có vấn �
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1725679656"></script>
-    <script src="/js/perfect-scrollbar.min.js?1725679656"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1725679656"></script>
-    <script src="/js/jquery.sticky.js?1725679656"></script>
-    <script src="/js/featherlight.min.js?1725679656"></script>
-    <script src="/js/highlight.pack.js?1725679656"></script>
+    <script src="/js/clipboard.min.js?1753158592"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753158592"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753158592"></script>
+    <script src="/js/jquery.sticky.js?1753158592"></script>
+    <script src="/js/featherlight.min.js?1753158592"></script>
+    <script src="/js/highlight.pack.js?1753158592"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1725679656"></script>
-    <script src="/js/learn.js?1725679656"></script>
-    <script src="/js/hugo-learn.js?1725679656"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753158592"></script>
+    <script src="/js/learn.js?1753158592"></script>
+    <script src="/js/hugo-learn.js?1753158592"></script>
 
-    <link href="/mermaid/mermaid.css?1725679656" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1725679656"></script>
+    <link href="/mermaid/mermaid.css?1753158592" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753158592"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

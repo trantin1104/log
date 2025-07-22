@@ -1,46 +1,50 @@
 ---
-title : "Setting up an AWS account"
-date :  "`r Sys.Date()`" 
-weight : 1 
-chapter : false
+title: " OPTIMIZE COST WITH LAMBDA"
+date: 2025-07-17
+weight: 1
+chapter: false
 ---
 
-# Creating your first AWS account
+# OPTIMIZE COST WITH LAMBDA
 
 #### Overview
-In this first lab, you will be creating your new **AWS** account and use Multi-factor Authentication (**MFA**) to improve your account security. Next, you will create an **Administrator Group** and **Admin User** to manage access to resources in your account instead of using the root user. \
-Finally, we will step through account authentication with **AWS Support** in the event you experience authentication problems.
 
-#### AWS Account
-**An AWS account** is the basic container for all the AWS resources you can create as an AWS customer. By default, each AWS account will have a _root user_. The _root user_ has full access within your AWS account, and root user permissions cannot be limited. When you first create your AWS account, you will be assessing it as the _root user_.
+In an AWS environment, Amazon EC2 is one of the most widely used services—and also a major source of cost if not managed effectively. The **“Optimize EC2 Cost with Lambda”** workshop is designed to help you automate EC2 cost management by using AWS Lambda to shut down EC2 instances when they are not needed—such as outside business hours.
 
-![Create Account](/images/1/0001.png?featherlight=false&width=90pc)
+<p align="center">
+  <img src="/images/index/image.png" width="70%">
+</p>
 
-{{% notice note%}}
-As a best practice, do not use the AWS account _root user_ for any task where it's not required. Instead, create a new IAM user for each person that requires administrator access. Thereafter, the users in the administrators user group should set up the user groups, users, and so on, for the AWS account. All future interaction should be through the AWS account's users and their own keys instead of the root user. However, to perform some account and service management tasks, you must log in using the root user credentials.
-{{% /notice%}}
+Through this workshop, you will learn how to:
 
-#### Multi-Factor Authentication (MFA)
-**MFA** adds extra security because it requires users to provide unique authentication from an AWS supported MFA mechanism in addition to their regular sign-in credentials when they access AWS websites or services.
+- Tag EC2 instances to identify which ones should be optimized.
+- Create an IAM Role that allows Lambda to control EC2.
+- Write a Lambda function to automatically start/stop EC2 instances based on a schedule.
+- Verify the results and clean up resources.
 
-#### IAM User Group 
-An **IAM user group** is a collection of IAM users. User groups let you specify permissions for multiple users, which can make it easier to manage the permissions for those users. Any user in that user group automatically has the permissions that are assigned to the user group. 
+#### Objectives
 
-#### IAM User
-An **IAM user** is an entity that you create in AWS to represent the person or application that uses it to interact with AWS. A user in AWS consists of a name and credentials. \
-Please note that an IAM user with administrator permissions is not the same thing as the AWS account root user.
+This workshop helps participants:
 
+- Understand how to integrate Lambda with EC2.
+- Optimize EC2 usage costs.
+- Increase automation in cloud infrastructure operations.
 
-#### AWS Support
-AWS Basic Support offers all AWS customers access to our Resource Center, Service Health Dashboard, Product FAQs, Discussion Forums, and Support for Health Checks – at no additional charge. Customers who desire a deeper level of support can subscribe to AWS Support at the Developer, Business, or Enterprise level.
+#### Requirements
 
-Customers who choose AWS Support gain one-on-one, fast-response support from AWS engineers. The service helps customers use AWS's products and features. With pay-by-the-month pricing and unlimited support cases, customers are freed from long-term commitments. Customers with operational issues or technical questions can contact a team of support engineers and receive predictable response times and personalized support.
+To complete this workshop, you’ll need:
 
+- An AWS account with AdministratorAccess permissions.
+- Basic knowledge of EC2, IAM, and Lambda.
+- A web browser and stable internet connection.
 
-#### Main Content
+#### Workshop Modules
 
-1. [Creating a new AWS Account](1-create-new-aws-account/)
-2. [Setting up MFA for the AWS Account root user](2-MFA-Setup-For-AWS-User-(root))
-3. [Creating an Administrator Accounts and Groups](3-create-admin-user-and-group/)
-4. [Getting support for Account Authentication](4-verify-new-account/)
-<!-- need to remove parenthesis for path in Hugo 0.88.1 for Windows-->
+1. [Introduction](1-introduction/)
+2. [Setup Requirements](2-setup-requirements/)
+3. [Tag EC2 Instances](3-tag-ec2-instances/)
+4. [Create IAM Role for Lambda](4-create-role-for-lambda/)
+5. [Create Lambda Function](5-create-lambda-function/)
+6. [Verify Results](6-verify-results/)
+7. [Clean Up Resources](7-cleanup-resources/)
+
