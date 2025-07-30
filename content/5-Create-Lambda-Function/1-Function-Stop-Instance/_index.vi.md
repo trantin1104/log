@@ -1,5 +1,5 @@
 ---
-title: " Function stop instance"
+title: " Function to Stop Instances"
 date: 2025-07-17
 weight: 1
 chapter: false
@@ -206,9 +206,30 @@ def sent_slack(action, action_results):
     | Year         | `*`     | Mỗi năm                        |
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.13.png" width="100%">
+  <img src="/images/5/5.1/image5.1.13.1.png" width="100%">
 </p>
 
 - Sau đó hãy bấm **Next**
 
-14. 
+14. Ở phần **Select target(s)**
+- Chọn **AWS service**
+- Ở **Select a target** chọn **Lambda function**
+- Ở **Function** chọn **dc-common-lamda-auto-stop**
+- Ở **Execution role** tích vào **Use existing role** rồi chọn **dc-common-lamda-role**
+- Bấm **Next**
+
+<p align="center">
+  <img src="/images/5/5.1/image5.1.14.png" width="100%">
+</p>
+
+15. Kiểm tra lại và hoàn thành, chọn **Create rule**
+
+<p align="center">
+  <img src="/images/5/5.1/image5.1.15.png" width="100%">
+</p>
+
+16. Đã tạo thành công rule cho stop insatance
+
+<p align="center">
+  <img src="/images/5/5.1/image5.1.16.png" width="100%">
+</p>
