@@ -12,21 +12,21 @@
     <title> Function stop instance :: Tạo mới tài khoản AWS</title>
 
     
-    <link href="/css/nucleus.css?1753178165" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753178165" rel="stylesheet">
-    <link href="/css/hybrid.css?1753178165" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753178165" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753178165" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753178165" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753178165" rel="stylesheet">
-    <link href="/css/theme.css?1753178165" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753178165" rel="stylesheet">
+    <link href="/css/nucleus.css?1753857137" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753857137" rel="stylesheet">
+    <link href="/css/hybrid.css?1753857137" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753857137" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753857137" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753857137" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753857137" rel="stylesheet">
+    <link href="/css/theme.css?1753857137" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753857137" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753178165" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753857137" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753178165"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753857137"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,15 +57,15 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753178165"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753178165"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753857137"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753857137"></script>
 
 <script type="text/javascript">
     var baseurl = "\/\/localhost:1313\/\/vi";
 </script>
 
 
-<script type="text/javascript" src="/js/search.js?1753178165"></script>
+<script type="text/javascript" src="/js/search.js?1753857137"></script>
 
     
   </div>
@@ -759,7 +759,7 @@
 </ol>
 <ul>
 <li>Ở <strong>Occurrence</strong> chọn <strong>Recurring schedule</strong></li>
-<li>Ở <strong>Time zone</strong> chọn <strong>(UTC+07:00) Asia/Saigon</strong></li>
+<li>Ở <strong>Time zone</strong> chọn <strong>(UTC+07:00) Asia/Saigon</strong> &ldquo;Bạn muốn <strong>EventBridge Rule</strong> dừng 17 giờ mỗi ngày từ thứ Hai đến thứ Sáu (trừ thứ 7 và Chủ nhật) theo giờ Việt Nam (ICT, UTC+7). Trên <strong>AWS EventBridge</strong>, cron dùng UTC, nên phải trừ 7 tiếng&rdquo;</li>
 <li>Ở <strong>Schedule type</strong> chọn <strong>Cron-based schedule</strong></li>
 <li>Trong phần <strong>Cron expression</strong>
 <table>
@@ -778,13 +778,13 @@
       </tr>
       <tr>
           <td>Hours</td>
-          <td><code>17</code></td>
-          <td>Lúc 17 giờ (5:00 PM)</td>
+          <td><code>10</code></td>
+          <td>10 giờ UTC (tức 17 giờ VN)</td>
       </tr>
       <tr>
           <td>Day of month</td>
-          <td><code>*</code></td>
-          <td>Mỗi ngày trong tháng</td>
+          <td><code>?</code></td>
+          <td>Bỏ qua ngày trong tháng</td>
       </tr>
       <tr>
           <td>Month</td>
@@ -793,8 +793,8 @@
       </tr>
       <tr>
           <td>Day of week</td>
-          <td><code>?</code></td>
-          <td>Không xác định cụ thể ngày nào</td>
+          <td><code>2-6</code></td>
+          <td>Từ thứ 2 đến thứ 6</td>
       </tr>
       <tr>
           <td>Year</td>
@@ -1040,19 +1040,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753178165"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753178165"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753178165"></script>
-    <script src="/js/jquery.sticky.js?1753178165"></script>
-    <script src="/js/featherlight.min.js?1753178165"></script>
-    <script src="/js/highlight.pack.js?1753178165"></script>
+    <script src="/js/clipboard.min.js?1753857137"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753857137"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753857137"></script>
+    <script src="/js/jquery.sticky.js?1753857137"></script>
+    <script src="/js/featherlight.min.js?1753857137"></script>
+    <script src="/js/highlight.pack.js?1753857137"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753178165"></script>
-    <script src="/js/learn.js?1753178165"></script>
-    <script src="/js/hugo-learn.js?1753178165"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753857137"></script>
+    <script src="/js/learn.js?1753857137"></script>
+    <script src="/js/hugo-learn.js?1753857137"></script>
 
-    <link href="/mermaid/mermaid.css?1753178165" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753178165"></script>
+    <link href="/mermaid/mermaid.css?1753857137" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753857137"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

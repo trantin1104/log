@@ -193,16 +193,16 @@ def sent_slack(action, action_results):
 
 13. Ở phần **Schedule pattern**
 - Ở **Occurrence** chọn **Recurring schedule**
-- Ở **Time zone** chọn **(UTC+07:00) Asia/Saigon**
+- Ở **Time zone** chọn **(UTC+07:00) Asia/Saigon** "Bạn muốn **EventBridge Rule** dừng 17 giờ mỗi ngày từ thứ Hai đến thứ Sáu (trừ thứ 7 và Chủ nhật) theo giờ Việt Nam (ICT, UTC+7). Trên **AWS EventBridge**, cron dùng UTC, nên phải trừ 7 tiếng"
 - Ở **Schedule type** chọn **Cron-based schedule**
 - Trong phần **Cron expression**
     | Trường       | Giá trị | Ý nghĩa                        |
     | ------------ | ------- | ------------------------------ |
     | Minutes      | `0`     | Vào phút 00                    |
-    | Hours        | `17`    | Lúc 17 giờ (5:00 PM)           |
-    | Day of month | `*`     | Mỗi ngày trong tháng           |
+    | Hours        | `10`    | 10 giờ UTC (tức 17 giờ VN)     |
+    | Day of month | `?`     | Bỏ qua ngày trong tháng        |
     | Month        | `*`     | Mỗi tháng                      |
-    | Day of week  | `?`     | Không xác định cụ thể ngày nào |
+    | Day of week  | `2-6`   | Từ thứ 2 đến thứ 6             |
     | Year         | `*`     | Mỗi năm                        |
 
 <p align="center">
