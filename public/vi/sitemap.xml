@@ -67,6 +67,19 @@
                 href="//localhost:1313/vi/2-setup-requirements/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/5-create-lambda-function/2-function-start-instance/</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-create-lambda-function/2-function-start-instance/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-create-lambda-function/2-function-start-instance/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/2-setup-requirements/2-create-vpc/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -144,6 +157,9 @@
                 hreflang="vi"
                 href="//localhost:1313/vi/5-create-lambda-function/"
                 />
+  </url><url>
+    <loc>//localhost:1313/vi/6-verify-results/</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/vi/categories/</loc>
     <xhtml:link

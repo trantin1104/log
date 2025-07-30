@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> TẠO LAMBDA FUNCTION :: Tạo mới tài khoản AWS</title>
+    <title> KIỂM TRA KẾT QUẢ :: Tạo mới tài khoản AWS</title>
 
     
-    <link href="/css/nucleus.css?1753868429" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753868429" rel="stylesheet">
-    <link href="/css/hybrid.css?1753868429" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753868429" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753868429" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753868429" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753868429" rel="stylesheet">
-    <link href="/css/theme.css?1753868429" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753868429" rel="stylesheet">
+    <link href="/css/nucleus.css?1753869915" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753869915" rel="stylesheet">
+    <link href="/css/hybrid.css?1753869915" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753869915" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753869915" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753869915" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753869915" rel="stylesheet">
+    <link href="/css/theme.css?1753869915" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753869915" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753868429" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753869915" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753868429"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753869915"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/vi/5-create-lambda-function/">
+  <body class="" data-url="/vi/6-verify-results/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,15 +57,15 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753868429"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753868429"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753869915"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753869915"></script>
 
 <script type="text/javascript">
     var baseurl = "\/\/localhost:1313\/\/vi";
 </script>
 
 
-<script type="text/javascript" src="/js/search.js?1753868429"></script>
+<script type="text/javascript" src="/js/search.js?1753869915"></script>
 
     
   </div>
@@ -313,7 +313,7 @@
     
     <li data-nav-id="/vi/5-create-lambda-function/" title=" TẠO LAMBDA FUNCTION" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/vi/5-create-lambda-function/">
@@ -397,6 +397,32 @@
  
 
           
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-verify-results/" title=" KIỂM TRA KẾT QUẢ" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/vi/6-verify-results/">
+          <b>6.</b> KIỂM TRA KẾT QUẢ
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
          
     </ul>
 
@@ -436,23 +462,11 @@
               
               
                   
-                    
-                    
-                      <option id="en" value="//localhost:1313/5-create-lambda-function/">English</option>
-                    
-                  
-              
-                  
-              
-          
-              
-              
-                  
               
                   
                     
                     
-                      <option id="vi" value="//localhost:1313/vi/5-create-lambda-function/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/6-verify-results/" selected>Tiếng Việt</option>
                     
                   
               
@@ -533,7 +547,7 @@
             
           
           
-            <a href='/vi/'> TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA</a> >  TẠO LAMBDA FUNCTION
+            <a href='/vi/'> TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA</a> >  KIỂM TRA KẾT QUẢ
           
         
           
@@ -544,11 +558,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#tạo-lambda-function">Tạo Lambda Function</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -564,7 +574,7 @@
           
             <h1>
               
-               TẠO LAMBDA FUNCTION
+               KIỂM TRA KẾT QUẢ
             </h1>
           
 
@@ -572,11 +582,9 @@
 
 
 
-	<h2 id="tạo-lambda-function">Tạo Lambda Function</h2>
-<p>Tiếp theo, chúng ta sẽ thực hành tạo hai Lambda Function – bước quan trọng trong quá trình triển khai hệ thống.</p>
+	<h1 id="kiểm-tra-kết-quả">KIỂM TRA KẾT QUẢ</h1>
 <ol>
-<li><a href="/vi/5-create-lambda-function/1-function-stop-instance/">Tạo Lambda Function thực hiện chức năng Stop instances</a></li>
-<li><a href="/vi/5-create-lambda-function/2-function-start-instance/">Tạo Lambda Function thực hiện chức năng Start instances</a></li>
+<li></li>
 </ol>
 
 
@@ -751,7 +759,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -766,9 +773,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -796,6 +800,23 @@
                     
             
         
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
             
         
@@ -809,10 +830,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/4-create-iam-role-for-lambda/" title=" TẠO IAM ROLE CHO LAMBDA"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/5-create-lambda-function/2-function-start-instance/" title=" Function to Start Instances"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/5-create-lambda-function/1-function-stop-instance/" title=" Function to Stop Instances" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/1-introduction/" title=" GIỚI THIỆU" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -822,19 +843,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753868429"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753868429"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753868429"></script>
-    <script src="/js/jquery.sticky.js?1753868429"></script>
-    <script src="/js/featherlight.min.js?1753868429"></script>
-    <script src="/js/highlight.pack.js?1753868429"></script>
+    <script src="/js/clipboard.min.js?1753869915"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753869915"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753869915"></script>
+    <script src="/js/jquery.sticky.js?1753869915"></script>
+    <script src="/js/featherlight.min.js?1753869915"></script>
+    <script src="/js/highlight.pack.js?1753869915"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753868429"></script>
-    <script src="/js/learn.js?1753868429"></script>
-    <script src="/js/hugo-learn.js?1753868429"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753869915"></script>
+    <script src="/js/learn.js?1753869915"></script>
+    <script src="/js/hugo-learn.js?1753869915"></script>
 
-    <link href="/mermaid/mermaid.css?1753868429" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753868429"></script>
+    <link href="/mermaid/mermaid.css?1753869915" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753869915"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

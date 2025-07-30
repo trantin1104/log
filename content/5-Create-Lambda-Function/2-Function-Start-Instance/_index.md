@@ -1,74 +1,74 @@
 ---
-title: " Function to Start Instances"
+title: "Function to Start Instances"
 date: 2025-07-17
 weight: 2
 chapter: false
 pre: "<b>5.2</b>"
 ---
 
-## Tạo Lambda Function thực hiện chức năng Start instances
+## Create a Lambda Function to Start Instances
 
-1. Truy cập vào [AWS Management Consle](https://aws.amazon.com/vi/console/)
-- Nhập vào tìm **Lambda**
-- Sau đó hãy bấm vào chọn **Lambda**
+1. Go to [AWS Management Console](https://aws.amazon.com/console/)  
+   - Search for **Lambda**  
+   - Then click to select **Lambda**
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.1.png" width="100%">
 </p>
 
-2. Tại **Functions** trong **Lambda**
-- Chọn **Create function**
+2. In **Lambda**, under **Functions**  
+   - Click **Create function**
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.2.png" width="100%">
 </p>
 
-3. Trong giao diện **Create function**
-- Chọn **Author from scratch**
-- Ở **Function name** đặt `dc-common-lambda-auto-start`
-- Trong phần **Runtime** chọn **Python 3.13**
-- Còn lại **Architecture** hãy chọn **x86_64**
+3. In the **Create function** interface  
+   - Select **Author from scratch**  
+   - Set **Function name** to `dc-common-lambda-auto-start`  
+   - In **Runtime**, choose **Python 3.13**  
+   - For **Architecture**, select **x86_64**
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.3.1.png" width="100%">
 </p>
 
-4. Tiếp tục ở giao diện **Create function**
-- Chọn **Change default execution role**
-- Ở **Execution role** chọn **Use an existing role**
-- Ở **Existing role** chọn **IAM role** vừa tạo 
-- Hoàn thành **Create function**
+4. Continue in the **Create function** interface  
+   - Click **Change default execution role**  
+   - In **Execution role**, select **Use an existing role**  
+   - In **Existing role**, choose the **IAM role** you just created  
+   - Complete by clicking **Create function**
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.4.png" width="100%">
 </p>
 
-5. Sau khi tạo thành công function 
-- Chọn **Configuration**
-- Tại thanh bên trái, chọn **Environment variables**
-- Chọn **Edit**
+5. After successfully creating the function  
+   - Select **Configuration**  
+   - In the left sidebar, choose **Environment variables**  
+   - Click **Edit**
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.5.png" width="100%">
 </p>
 
-6. Tại giao diện **Edit environment variables**
-- Ở **Key** nhập `environment_auto`
-- Ở **Value** nhập `true`
-- Chọn **Save** để hoàn tất
+6. In the **Edit environment variables** interface  
+   - Enter `environment_auto` for **Key**  
+   - Enter `true` for **Value**  
+   - Click **Save** to complete
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.6.png" width="100%">
 </p>
 
-7. Sau khi tạo thành công ta đến với **code**
+7. After successfully creating the function, proceed to the **code** section
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.7.png" width="100%">
 </p>
 
-8. Trong giao diện **Code source**
-- Import source code: Cần phải thay đổi **webhook_url** để nhận thông báo đến Slack.
+8. In the **Code source** interface  
+- Import the source code: You need to change the **webhook_url** to receive notifications on Slack.
 
 ```python
 import boto3
@@ -82,7 +82,7 @@ http = urllib3.PoolManager()
 webhook_url = "https://hooks.slack.com/services/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"
 
 def lambda_handler(event, context):
-    # Lấy biến môi trường và action từ input
+
     environment_auto = os.environ.get('environment_auto')
     action = event.get("action", "").lower()
 
@@ -95,7 +95,7 @@ def lambda_handler(event, context):
             "body": "Missing environment_auto or invalid action"
         }
 
-    # Lọc EC2 theo tag
+
     instances = ec2_resource.instances.filter(
         Filters=[{'Name': 'tag:environment_auto', 'Values': [environment_auto]}]
     )
@@ -134,7 +134,6 @@ def sent_slack(action_result, action):
                 instance_ids.append(i["InstanceId"])
 
     if instance_ids:
-        # Lấy thời gian hiện tại theo UTC+7 (giờ VN)
         now = datetime.now(timezone.utc) + timedelta(hours=7)
         current_time = now.strftime("%H:%M:%S %d-%m-%Y")
 
@@ -149,68 +148,70 @@ def sent_slack(action_result, action):
         print(f"[INFO] No instances {action}ed")
 ```
 
-- Sau khi đã thêm đường dẫn ta nhấn **Deploy**
+- After adding the webhook URL, click **Deploy**
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.8.png" width="100%">
 </p>
 
-9. Truy cập vào **Amazon EventBridge**
-- Chọn **Rules**
-- Chọn vào **Create rule**
+9. Go to **Amazon EventBridge**  
+- Select **Rules**  
+- Click **Create rule**
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.9.png" width="100%">
 </p>
 
-10. Ở phần **Define rule detail** trong giao diện **create rule**
-- Ở **Name** nhập `dc-common-lambda-auto-start`
-- Ở **Description** nhập `dc-common-lambda-auto-start`
-- Chọn **Schedule**
-- Chọn **Countinue to create rule**
+10. In the **Define rule detail** section of the **Create rule** interface  
+- For **Name**, enter `dc-common-lambda-auto-start`  
+- For **Description**, enter `dc-common-lambda-auto-start`  
+- Choose **Schedule**  
+- Click **Continue to create rule**
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.10.png" width="100%">
 </p>
 
-11. Ở phần **Schedule pattern**
-- Ở **Occurrence** chọn **Recurring schedule**
-- Ở **Time zone** chọn **(UTC+07:00) Asia/Saigon** "Bạn muốn **EventBridge Rule** bật lúc 9 giờ mỗi ngày từ thứ Hai đến thứ Sáu (trừ thứ 7 và Chủ nhật) theo giờ Việt Nam (ICT, UTC+7). Trên **AWS EventBridge**, cron dùng UTC, nên phải trừ 7 tiếng"
-- Ở **Schedule type** chọn **Cron-based schedule**
-- Trong phần **Cron expression**
-    | Trường       | Giá trị | Ý nghĩa                        |
-    | ------------ | ------- | ------------------------------ |
-    | Minutes      | `0`     | Vào phút 00                    |
-    | Hours        | `2`     | 2 giờ UTC (tức 9 giờ VN)       |
-    | Day of month | `?`     | Bỏ qua ngày trong tháng        |
-    | Month        | `*`     | Mỗi tháng                      |
-    | Day of week  | `2-6`   | Từ thứ 2 đến thứ 6             |
-    | Year         | `*`     | Mỗi năm                        |
+11. In the **Schedule pattern** section  
+- For **Occurrence**, choose **Recurring schedule**  
+- For **Time zone**, select **(UTC+07:00) Asia/Saigon**  
+  *You want the **EventBridge Rule** to trigger at 9:00 AM every Monday to Friday (excluding Saturday and Sunday) in Vietnam Time (ICT, UTC+7). On **AWS EventBridge**, cron uses UTC, so subtract 7 hours.*  
+- For **Schedule type**, select **Cron-based schedule**  
+- In the **Cron expression**, configure as follows:
+
+| Field        | Value  | Description                          |
+| ------------ | ------ | ------------------------------------ |
+| Minutes      | `0`    | At minute 00                         |
+| Hours        | `2`    | 2:00 UTC (9:00 AM Vietnam time)      |
+| Day of month | `?`    | Ignore the day of the month          |
+| Month        | `*`    | Every month                          |
+| Day of week  | `2-6`  | Monday through Friday                |
+| Year         | `*`    | Every year                           |
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.11.png" width="100%">
 </p>
 
-- Sau đó hãy bấm **Next**
+- Then click **Next**
 
-12. Ở phần **Select target(s)**
-- Chọn **AWS service**
-- Ở **Select a target** chọn **Lambda function**
-- Ở **Function** chọn **dc-common-lamda-auto-stop**
-- Ở **Execution role** tích vào **Use existing role** rồi chọn **dc-common-lamda-role**
-- Bấm **Next**
+12. In the **Select target(s)** section  
+- Select **AWS service**  
+- For **Select a target**, choose **Lambda function**  
+- For **Function**, select **dc-common-lambda-auto-stop**  
+- For **Execution role**, check **Use existing role** and select **dc-common-lambda-role**  
+- Click **Next**
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.12.png" width="100%">
 </p>
 
-13. Kiểm tra lại và hoàn thành, chọn **Create rule**
+13. Review and complete by clicking **Create rule**
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.13.png" width="100%">
 </p>
 
-14. Đã tạo thành công rule cho start insatance
+14. The rule for starting instances has been successfully created
 
 <p align="center">
   <img src="/images/5/5.2/image5.2.14.png" width="100%">
