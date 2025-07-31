@@ -1,5 +1,8 @@
 baseURL = "https://trantin1104.github.io/log/"
 theme = "hugo-theme-learn"
+publishDir = "docs"        
+canonifyURLs = true       
+relativeURLs = false      
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

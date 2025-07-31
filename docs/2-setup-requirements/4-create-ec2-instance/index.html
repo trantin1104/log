@@ -7,26 +7,26 @@
     <meta name="description" content="">
 <meta name="author" content="trantrongtin11042000@gmail.com">
 
-    <link rel="icon" href="/log/images/favicon.png" type="image/png">
+    <link rel="icon" href="https://trantin1104.github.io/log/images/favicon.png" type="image/png">
 
     <title> Create EC2 Instance :: Create a new AWS account.</title>
 
     
-    <link href="/log/css/nucleus.css?1753953658" rel="stylesheet">
-    <link href="/log/css/fontawesome-all.min.css?1753953658" rel="stylesheet">
-    <link href="/log/css/hybrid.css?1753953658" rel="stylesheet">
-    <link href="/log/css/featherlight.min.css?1753953658" rel="stylesheet">
-    <link href="/log/css/perfect-scrollbar.min.css?1753953658" rel="stylesheet">
-    <link href="/log/css/auto-complete.css?1753953658" rel="stylesheet">
-    <link href="/log/css/atom-one-dark-reasonable.css?1753953658" rel="stylesheet">
-    <link href="/log/css/theme.css?1753953658" rel="stylesheet">
-    <link href="/log/css/hugo-theme.css?1753953658" rel="stylesheet">
+    <link href="https://trantin1104.github.io/log/css/nucleus.css?1753954788" rel="stylesheet">
+    <link href="https://trantin1104.github.io/log/css/fontawesome-all.min.css?1753954788" rel="stylesheet">
+    <link href="https://trantin1104.github.io/log/css/hybrid.css?1753954788" rel="stylesheet">
+    <link href="https://trantin1104.github.io/log/css/featherlight.min.css?1753954788" rel="stylesheet">
+    <link href="https://trantin1104.github.io/log/css/perfect-scrollbar.min.css?1753954788" rel="stylesheet">
+    <link href="https://trantin1104.github.io/log/css/auto-complete.css?1753954788" rel="stylesheet">
+    <link href="https://trantin1104.github.io/log/css/atom-one-dark-reasonable.css?1753954788" rel="stylesheet">
+    <link href="https://trantin1104.github.io/log/css/theme.css?1753954788" rel="stylesheet">
+    <link href="https://trantin1104.github.io/log/css/hugo-theme.css?1753954788" rel="stylesheet">
     
-    <link href="/log/css/theme-workshop.css?1753953658" rel="stylesheet">
+    <link href="https://trantin1104.github.io/log/css/theme-workshop.css?1753954788" rel="stylesheet">
     
     
 
-    <script src="/log/js/jquery-3.3.1.min.js?1753953658"></script>
+    <script src="https://trantin1104.github.io/log/js/jquery-3.3.1.min.js?1753954788"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,14 +36,14 @@
     </style>
     
   </head>
-  <body class="" data-url="/log/2-setup-requirements/4-create-ec2-instance/">
+  <body class="" data-url="https://trantin1104.github.io/log/2-setup-requirements/4-create-ec2-instance/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
 
   <div id="header-wrapper">
     <div id="header">
-      <a id="logo" href="/">
+      <a id="logo" href="https://trantin1104.github.io/log/">
 
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
 
@@ -57,15 +57,15 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/log/js/lunr.min.js?1753953658"></script>
-<script type="text/javascript" src="/log/js/auto-complete.js?1753953658"></script>
+<script type="text/javascript" src="https://trantin1104.github.io/log/js/lunr.min.js?1753954788"></script>
+<script type="text/javascript" src="https://trantin1104.github.io/log/js/auto-complete.js?1753954788"></script>
 
 <script type="text/javascript">
     var baseurl = "https:\/\/trantin1104.github.io\/log\/";
 </script>
 
 
-<script type="text/javascript" src="/log/js/search.js?1753953658"></script>
+<script type="text/javascript" src="https://trantin1104.github.io/log/js/search.js?1753954788"></script>
 
     
   </div>
@@ -83,12 +83,12 @@
  
   
     
-    <li data-nav-id="/log/1-introduction/" title=" INTRODUCTION" class="dd-item 
+    <li data-nav-id="/1-introduction/" title=" INTRODUCTION" class="dd-item 
         
         
         
         ">
-      <a href="/log/1-introduction/">
+      <a href="https://trantin1104.github.io/log/1-introduction/">
           <b>1.</b> INTRODUCTION
           
             <i class="fas fa-check read-icon"></i>
@@ -109,12 +109,12 @@
  
   
     
-    <li data-nav-id="/log/2-setup-requirements/" title=" SETUP REQUIREMENTS" class="dd-item 
+    <li data-nav-id="/2-setup-requirements/" title=" SETUP REQUIREMENTS" class="dd-item 
         parent
         
         
         ">
-      <a href="/log/2-setup-requirements/">
+      <a href="https://trantin1104.github.io/log/2-setup-requirements/">
           <b>2.</b> SETUP REQUIREMENTS
           
             <i class="fas fa-check read-icon"></i>
@@ -140,12 +140,12 @@
  
   
     
-    <li data-nav-id="/log/2-setup-requirements/1-configure-slack-webhooks/" title=" Configure Slack Web-hooks" class="dd-item 
+    <li data-nav-id="/2-setup-requirements/1-configure-slack-webhooks/" title=" Configure Slack Web-hooks" class="dd-item 
         
         
         
         ">
-      <a href="/log/2-setup-requirements/1-configure-slack-webhooks/">
+      <a href="https://trantin1104.github.io/log/2-setup-requirements/1-configure-slack-webhooks/">
           <b>2.1</b> Configure Slack Web-hooks
           
             <i class="fas fa-check read-icon"></i>
@@ -168,12 +168,12 @@
  
   
     
-    <li data-nav-id="/log/2-setup-requirements/2-create-vpc/" title=" Create VPC" class="dd-item 
+    <li data-nav-id="/2-setup-requirements/2-create-vpc/" title=" Create VPC" class="dd-item 
         
         
         
         ">
-      <a href="/log/2-setup-requirements/2-create-vpc/">
+      <a href="https://trantin1104.github.io/log/2-setup-requirements/2-create-vpc/">
           <b>2.2</b> Create VPC
           
             <i class="fas fa-check read-icon"></i>
@@ -196,12 +196,12 @@
  
   
     
-    <li data-nav-id="/log/2-setup-requirements/3-create-security-gruop/" title=" Create Security Group" class="dd-item 
+    <li data-nav-id="/2-setup-requirements/3-create-security-gruop/" title=" Create Security Group" class="dd-item 
         
         
         
         ">
-      <a href="/log/2-setup-requirements/3-create-security-gruop/">
+      <a href="https://trantin1104.github.io/log/2-setup-requirements/3-create-security-gruop/">
           <b>2.3</b> Create Security Group
           
             <i class="fas fa-check read-icon"></i>
@@ -224,12 +224,12 @@
  
   
     
-    <li data-nav-id="/log/2-setup-requirements/4-create-ec2-instance/" title=" Create EC2 Instance" class="dd-item 
+    <li data-nav-id="/2-setup-requirements/4-create-ec2-instance/" title=" Create EC2 Instance" class="dd-item 
         
         active
         
         ">
-      <a href="/log/2-setup-requirements/4-create-ec2-instance/">
+      <a href="https://trantin1104.github.io/log/2-setup-requirements/4-create-ec2-instance/">
           <b>2.4</b> Create EC2 Instance
           
             <i class="fas fa-check read-icon"></i>
@@ -259,12 +259,12 @@
  
   
     
-    <li data-nav-id="/log/3-tag-for-instances/" title=" ADD TAG TO INSTANCE" class="dd-item 
+    <li data-nav-id="/3-tag-for-instances/" title=" ADD TAG TO INSTANCE" class="dd-item 
         
         
         
         ">
-      <a href="/log/3-tag-for-instances/">
+      <a href="https://trantin1104.github.io/log/3-tag-for-instances/">
           <b>3.</b> ADD TAG TO INSTANCE
           
             <i class="fas fa-check read-icon"></i>
@@ -285,12 +285,12 @@
  
   
     
-    <li data-nav-id="/log/4-create-iam-role-for-lambda/" title=" CREATE IAM ROLE FOR LAMBDA" class="dd-item 
+    <li data-nav-id="/4-create-iam-role-for-lambda/" title=" CREATE IAM ROLE FOR LAMBDA" class="dd-item 
         
         
         
         ">
-      <a href="/log/4-create-iam-role-for-lambda/">
+      <a href="https://trantin1104.github.io/log/4-create-iam-role-for-lambda/">
           <b>4.</b> CREATE IAM ROLE FOR LAMBDA
           
             <i class="fas fa-check read-icon"></i>
@@ -311,12 +311,12 @@
  
   
     
-    <li data-nav-id="/log/5-create-lambda-function/" title=" CREATE LAMBDA FUNCTION" class="dd-item 
+    <li data-nav-id="/5-create-lambda-function/" title=" CREATE LAMBDA FUNCTION" class="dd-item 
         
         
         
         ">
-      <a href="/log/5-create-lambda-function/">
+      <a href="https://trantin1104.github.io/log/5-create-lambda-function/">
           <b>5.</b> CREATE LAMBDA FUNCTION
           
             <i class="fas fa-check read-icon"></i>
@@ -342,12 +342,12 @@
  
   
     
-    <li data-nav-id="/log/5-create-lambda-function/1-function-stop-instance/" title=" Function to Stop Instances" class="dd-item 
+    <li data-nav-id="/5-create-lambda-function/1-function-stop-instance/" title=" Function to Stop Instances" class="dd-item 
         
         
         
         ">
-      <a href="/log/5-create-lambda-function/1-function-stop-instance/">
+      <a href="https://trantin1104.github.io/log/5-create-lambda-function/1-function-stop-instance/">
           <b>5.1</b> Function to Stop Instances
           
             <i class="fas fa-check read-icon"></i>
@@ -370,12 +370,12 @@
  
   
     
-    <li data-nav-id="/log/5-create-lambda-function/2-function-start-instance/" title="Function to Start Instances" class="dd-item 
+    <li data-nav-id="/5-create-lambda-function/2-function-start-instance/" title="Function to Start Instances" class="dd-item 
         
         
         
         ">
-      <a href="/log/5-create-lambda-function/2-function-start-instance/">
+      <a href="https://trantin1104.github.io/log/5-create-lambda-function/2-function-start-instance/">
           <b>5.2</b>Function to Start Instances
           
             <i class="fas fa-check read-icon"></i>
@@ -405,12 +405,12 @@
  
   
     
-    <li data-nav-id="/log/6-verify-results/" title=" CHECK RESULTS" class="dd-item 
+    <li data-nav-id="/6-verify-results/" title=" CHECK RESULTS" class="dd-item 
         
         
         
         ">
-      <a href="/log/6-verify-results/">
+      <a href="https://trantin1104.github.io/log/6-verify-results/">
           <b>6.</b> CHECK RESULTS
           
             <i class="fas fa-check read-icon"></i>
@@ -563,7 +563,7 @@
             
           
           
-            <a href='/log/'> OPTIMIZE COST WITH LAMBDA</a> > <a href='/log/2-setup-requirements/'> SETUP REQUIREMENTS</a> >  Create EC2 Instance
+            <a href='https://trantin1104.github.io/log/'> OPTIMIZE COST WITH LAMBDA</a> > <a href='https://trantin1104.github.io/log/2-setup-requirements/'> SETUP REQUIREMENTS</a> >  Create EC2 Instance
           
         
           
@@ -613,7 +613,7 @@
 <li>Then click on <strong>EC2</strong></li>
 </ul>
 <p align="center">
-  <img src="{{ "/images/2/2.4/image2.4.1.png" | relURL }}" width="100%">
+  <img src="https://trantin1104.github.io/log/images/2/2.4/image2.4.1.png" width="70%">
 </p>
 <ol start="2">
 <li>In the <strong>EC2</strong> interface:</li>
@@ -623,7 +623,7 @@
 <li>Then click on <strong>Launch Instance</strong></li>
 </ul>
 <p align="center">
-  <img src="{{ "/images/2/2.4/image2.4.2.png" | relURL }}" width="100%">
+  <img src="https://trantin1104.github.io/log/images/2/2.4/image2.4.2.png" width="70%">
 </p>
 <ol start="3">
 <li>In the <strong>Launch Instance</strong> interface:</li>
@@ -634,7 +634,7 @@
 <li>Select <strong>Amazon Linux 2023 kernel-6.12 AMI</strong></li>
 </ul>
 <p align="center">
-  <img src="{{ "/images/2/2.4/image2.4.3.png" | relURL }}" width="100%">
+  <img src="https://trantin1104.github.io/log/images/2/2.4/image2.4.3.png" width="70%">
 </p>
 <ol start="4">
 <li>Under <strong>Instance type</strong>:</li>
@@ -643,7 +643,7 @@
 <li>Choose <strong>t2.micro</strong></li>
 </ul>
 <p align="center">
-  <img src="{{ "/images/2/2.4/image2.4.4.png" | relURL }}" width="100%">
+  <img src="https://trantin1104.github.io/log/images/2/2.4/image2.4.4.png" width="70%">
 </p>
 <ol start="5">
 <li>Next, under <strong>Key pair</strong>:</li>
@@ -652,7 +652,7 @@
 <li>Select <strong>Create new key pair</strong></li>
 </ul>
 <p align="center">
-  <img src="{{ "/images/2/2.4/image2.4.5.png" | relURL }}" width="100%">
+  <img src="https://trantin1104.github.io/log/images/2/2.4/image2.4.5.png" width="70%">
 </p>
 <ol start="6">
 <li>In the <strong>Create key pair</strong> screen:</li>
@@ -662,7 +662,7 @@
 <li>Click <strong>Create key pair</strong></li>
 </ul>
 <p align="center">
-  <img src="{{ "/images/2/2.4/image2.4.6.png" | relURL }}" width="100%">
+  <img src="https://trantin1104.github.io/log/images/2/2.4/image2.4.6.png" width="70%">
 </p>
 <ol start="7">
 <li>In the <strong>Network settings</strong> section:</li>
@@ -671,7 +671,7 @@
 <li>Click <strong>Edit</strong></li>
 </ul>
 <p align="center">
-  <img src="{{ "/images/2/2.4/image2.4.7.png" | relURL }}" width="100%">
+  <img src="https://trantin1104.github.io/log/images/2/2.4/image2.4.7.png" width="70%">
 </p>
 <ol start="8">
 <li>In the <strong>Edit</strong> section of <strong>Network settings</strong>:</li>
@@ -685,13 +685,13 @@
 <li>Once completed, click <strong>Launch instance</strong></li>
 </ul>
 <p align="center">
-  <img src="{{ "/images/2/2.4/image2.4.8.png" | relURL }}" width="100%">
+  <img src="https://trantin1104.github.io/log/images/2/2.4/image2.4.8.png" width="70%">
 </p>
 <ol start="9">
 <li>The <strong>EC2 instance</strong> has been successfully created</li>
 </ol>
 <p align="center">
-  <img src="{{ "/images/2/2.4/image2.4.9.png" | relURL }}" width="100%">
+  <img src="https://trantin1104.github.io/log/images/2/2.4/image2.4.9.png" width="70%">
 </p>
 <blockquote>
 <p><strong>Note:</strong> After creating the EC2 instance, wait a few minutes for the instance to enter the &ldquo;running&rdquo; state and for internal services to fully start. Only then should you SSH into it or access any hosted web server (if applicable).</p></blockquote>
@@ -946,10 +946,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/log/2-setup-requirements/3-create-security-gruop/" title=" Create Security Group"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://trantin1104.github.io/log/2-setup-requirements/3-create-security-gruop/" title=" Create Security Group"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/log/3-tag-for-instances/" title=" ADD TAG TO INSTANCE" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://trantin1104.github.io/log/3-tag-for-instances/" title=" ADD TAG TO INSTANCE" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -959,19 +959,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/log/js/clipboard.min.js?1753953658"></script>
-    <script src="/log/js/perfect-scrollbar.min.js?1753953658"></script>
-    <script src="/log/js/perfect-scrollbar.jquery.min.js?1753953658"></script>
-    <script src="/log/js/jquery.sticky.js?1753953658"></script>
-    <script src="/log/js/featherlight.min.js?1753953658"></script>
-    <script src="/log/js/highlight.pack.js?1753953658"></script>
+    <script src="https://trantin1104.github.io/log/js/clipboard.min.js?1753954788"></script>
+    <script src="https://trantin1104.github.io/log/js/perfect-scrollbar.min.js?1753954788"></script>
+    <script src="https://trantin1104.github.io/log/js/perfect-scrollbar.jquery.min.js?1753954788"></script>
+    <script src="https://trantin1104.github.io/log/js/jquery.sticky.js?1753954788"></script>
+    <script src="https://trantin1104.github.io/log/js/featherlight.min.js?1753954788"></script>
+    <script src="https://trantin1104.github.io/log/js/highlight.pack.js?1753954788"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/log/js/modernizr.custom-3.6.0.js?1753953658"></script>
-    <script src="/log/js/learn.js?1753953658"></script>
-    <script src="/log/js/hugo-learn.js?1753953658"></script>
+    <script src="https://trantin1104.github.io/log/js/modernizr.custom-3.6.0.js?1753954788"></script>
+    <script src="https://trantin1104.github.io/log/js/learn.js?1753954788"></script>
+    <script src="https://trantin1104.github.io/log/js/hugo-learn.js?1753954788"></script>
 
-    <link href="/log/mermaid/mermaid.css?1753953658" rel="stylesheet" />
-    <script src="/log/mermaid/mermaid.js?1753953658"></script>
+    <link href="https://trantin1104.github.io/log/mermaid/mermaid.css?1753954788" rel="stylesheet" />
+    <script src="https://trantin1104.github.io/log/mermaid/mermaid.js?1753954788"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
