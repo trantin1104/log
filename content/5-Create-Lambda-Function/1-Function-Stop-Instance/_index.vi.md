@@ -86,7 +86,12 @@ from datetime import datetime, timedelta, timezone
 
 ec2_resource = boto3.resource('ec2')
 http = urllib3.PoolManager()
-webhook_url = "https://hooks.slack.com/services/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"
+webhook_url = "https://hooks.slack.com/services/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"
+
+ACTION_VERB = {
+    "start": "Started",
+    "stop": "Stopped"
+}
 
 def lambda_handler(event, context):
     environment_auto = os.environ.get('environment_auto')
@@ -115,6 +120,7 @@ def lambda_handler(event, context):
     print(f"[DEBUG] Instances found: {instance_list}")
 
     if not instance_list:
+        print(f"[INFO] No EC2 instances found for action '{action}'")
         return {
             "statusCode": 404,
             "body": "No EC2 instances found"
@@ -132,12 +138,11 @@ def lambda_handler(event, context):
 
     return {
         "statusCode": 200,
-        "body": f"{action.capitalize()}ed {len(instance_list)} EC2 instance(s)"
+        "body": f"{ACTION_VERB[action]} {len(instance_list)} EC2 instance(s)"
     }
 
 def sent_slack(action, action_results):
     instance_ids = []
-
     key = "StartingInstances" if action == "start" else "StoppingInstances"
 
     for result in action_results:
@@ -148,8 +153,12 @@ def sent_slack(action, action_results):
     if instance_ids:
         now = datetime.now(timezone.utc) + timedelta(hours=7)
         current_time = now.strftime("%H:%M:%S %d-%m-%Y")
-
-        msg = f"{'✅ Starting' if action == 'start' else '⛔ Stopping'} Instances ID:\n{instance_ids}\n🕒 Time: {current_time} (Asia/Ho_Chi_Minh)"
+        instance_list_str = "\n• " + "\n• ".join(instance_ids)
+        msg = (
+            f"{'✅ Started' if action == 'start' else '⛔ Stopped'} EC2 Instances:\n"
+            f"{instance_list_str}\n"
+            f"🕒 Time: {current_time} (Asia/Ho_Chi_Minh)"
+        )
         data = {"text": msg}
         r = http.request("POST",
                          webhook_url,
@@ -157,7 +166,7 @@ def sent_slack(action, action_results):
                          headers={"Content-Type": "application/json"})
         print(f"[DEBUG] Slack response status: {r.status}")
     else:
-        print(f"[INFO] No instances {action}ed")
+        print(f"[INFO] No instances {ACTION_VERB[action]}")
 ```
 
 - Sau khi đã thêm đường dẫn ta nhấn **Deploy**

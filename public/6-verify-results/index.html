@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> INTRODUCTION :: Create a new AWS account.</title>
+    <title> CHECK RESULTS :: Create a new AWS account.</title>
 
     
     <link href="/css/nucleus.css?1753947581" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/1-introduction/">
+  <body class="" data-url="/6-verify-results/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -85,7 +85,7 @@
     
     <li data-nav-id="/1-introduction/" title=" INTRODUCTION" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/1-introduction/">
@@ -407,7 +407,7 @@
     
     <li data-nav-id="/6-verify-results/" title=" CHECK RESULTS" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/6-verify-results/">
@@ -464,7 +464,7 @@
                   
                     
                     
-                      <option id="en" value="//localhost:1313/1-introduction/" selected>English</option>
+                      <option id="en" value="//localhost:1313/6-verify-results/" selected>English</option>
                     
                   
               
@@ -478,7 +478,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1313/vi/1-introduction/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/6-verify-results/">Tiếng Việt</option>
                     
                   
               
@@ -559,7 +559,7 @@
             
           
           
-            <a href='/'> OPTIMIZE COST WITH LAMBDA</a> >  INTRODUCTION
+            <a href='/'> OPTIMIZE COST WITH LAMBDA</a> >  CHECK RESULTS
           
         
           
@@ -572,8 +572,12 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">INTRODUCTION</a></li>
-    <li><a href="#workshop-objective">Workshop Objective</a></li>
+    <li>
+      <ul>
+        <li><a href="#check-stop-results">Check Stop Results</a></li>
+        <li><a href="#check-start-results">Check Start Results</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -591,7 +595,7 @@
           
             <h1>
               
-               INTRODUCTION
+               CHECK RESULTS
             </h1>
           
 
@@ -599,22 +603,88 @@
 
 
 
-	<h2 id="introduction">INTRODUCTION</h2>
-<p>When using AWS cloud infrastructure, many organizations face <strong>resource wastage</strong>, especially with <strong>EC2 instances running unnecessarily</strong> outside of working hours. Failing to monitor and optimize these instances can lead to <strong>significant operational costs</strong>.</p>
+	<h3 id="check-stop-results">Check Stop Results</h3>
+<ol>
+<li>Check the <strong>EC2</strong> interface and the <strong>instance</strong> status</li>
+</ol>
 <p align="center">
-  <img src="/images/1/image1.png" width="70%">
+  <img src="/images/6/image6.1.png" width="100%">
 </p>
-<h2 id="workshop-objective">Workshop Objective</h2>
-<p>The <strong>“Optimize EC2 Cost with Lambda”</strong> workshop is designed to help users:</p>
+<ol start="2">
+<li>Go to the <strong>Lambda Function</strong> and execute the <strong>stop instance</strong> function</li>
+</ol>
 <ul>
-<li>Automate <strong>starting/stopping EC2 instances</strong> based on schedules or conditions.</li>
-<li>Use <strong>AWS Lambda</strong> to manage EC2 resources without provisioning or managing servers (serverless).</li>
-<li>Minimize cloud infrastructure costs through simple and reusable automation steps.</li>
+<li>Click <strong>Test</strong></li>
+<li>Select <strong>Create new event</strong></li>
+<li>In the <strong>Event name</strong> field, enter <code>instance-stop</code></li>
+<li>In the <strong>Event JSON</strong> section, enter:</li>
 </ul>
-
-<div class="notices info" ><p>💡 <strong>AWS Lambda</strong> is a serverless compute service that lets you run code without provisioning or managing servers.</p>
-</div>
-
+<pre tabindex="0"><code>{
+  &#34;action&#34;: &#34;stop&#34;
+}
+</code></pre><ul>
+<li>Click <strong>Save</strong></li>
+<li>Click <strong>Test</strong></li>
+</ul>
+<p align="center">
+  <img src="/images/6/image6.2.png" width="100%">
+</p>
+<ol start="3">
+<li>A successful result is returned</li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.3.png" width="100%">
+</p>
+<ol start="4">
+<li>Check your <strong>Slack</strong> workspace to confirm that a <strong>Stopped instance</strong> notification has been received</li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.4.png" width="100%">
+</p>
+<ol start="5">
+<li>Recheck the <strong>instance</strong> status in the <strong>EC2</strong> interface</li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.5.png" width="100%">
+</p>
+<h3 id="check-start-results">Check Start Results</h3>
+<ol start="6">
+<li>Similarly, go to the <strong>Lambda Function</strong> and execute the <strong>start instance</strong> function</li>
+</ol>
+<ul>
+<li>Click <strong>Test</strong></li>
+<li>Select <strong>Create new event</strong></li>
+<li>In the <strong>Event name</strong> field, enter <code>instance-start</code></li>
+<li>In the <strong>Event JSON</strong> section, enter:</li>
+</ul>
+<pre tabindex="0"><code>{
+  &#34;action&#34;: &#34;start&#34;
+}
+</code></pre><ul>
+<li>Click <strong>Save</strong></li>
+<li>Click <strong>Test</strong></li>
+</ul>
+<p align="center">
+  <img src="/images/6/image6.6.png" width="100%">
+</p>
+<ol start="7">
+<li>A successful result is returned</li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.7.png" width="100%">
+</p>
+<ol start="8">
+<li>Check your <strong>Slack</strong> workspace to confirm that a <strong>Started instance</strong> notification has been received</li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.8.png" width="100%">
+</p>
+<ol start="9">
+<li>Recheck the <strong>instance</strong> status in the <strong>EC2</strong> interface</li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.9.png" width="100%">
+</p>
 
 
 
@@ -655,123 +725,8 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -831,6 +786,19 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -838,6 +806,108 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -859,10 +929,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/" title=" OPTIMIZE COST WITH LAMBDA"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/5-create-lambda-function/2-function-start-instance/" title="Function to Start Instances"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/2-setup-requirements/" title=" SETUP REQUIREMENTS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/1-introduction/" title=" INTRODUCTION" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

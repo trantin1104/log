@@ -158,6 +158,19 @@
                 href="//localhost:1313/5-create-lambda-function/"
                 />
   </url><url>
+    <loc>//localhost:1313/6-verify-results/</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-verify-results/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-verify-results/"
+                />
+  </url><url>
     <loc>//localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"

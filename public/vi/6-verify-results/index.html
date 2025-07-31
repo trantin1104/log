@@ -12,21 +12,21 @@
     <title> KIỂM TRA KẾT QUẢ :: Tạo mới tài khoản AWS</title>
 
     
-    <link href="/css/nucleus.css?1753869915" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753869915" rel="stylesheet">
-    <link href="/css/hybrid.css?1753869915" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753869915" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753869915" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753869915" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753869915" rel="stylesheet">
-    <link href="/css/theme.css?1753869915" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753869915" rel="stylesheet">
+    <link href="/css/nucleus.css?1753947581" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753947581" rel="stylesheet">
+    <link href="/css/hybrid.css?1753947581" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753947581" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753947581" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753947581" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753947581" rel="stylesheet">
+    <link href="/css/theme.css?1753947581" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753947581" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753869915" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753947581" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753869915"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753947581"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,15 +57,15 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753869915"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753869915"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753947581"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753947581"></script>
 
 <script type="text/javascript">
     var baseurl = "\/\/localhost:1313\/\/vi";
 </script>
 
 
-<script type="text/javascript" src="/js/search.js?1753869915"></script>
+<script type="text/javascript" src="/js/search.js?1753947581"></script>
 
     
   </div>
@@ -462,6 +462,18 @@
               
               
                   
+                    
+                    
+                      <option id="en" value="//localhost:1313/6-verify-results/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
               
                   
                     
@@ -558,7 +570,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#kiểm-tra-kết-quả-stop">Kiểm tra kết quả Stop</a></li>
+        <li><a href="#kiểm-tra-kết-quả-start">Kiểm tra kết quả Start</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -582,11 +603,88 @@
 
 
 
-	<h1 id="kiểm-tra-kết-quả">KIỂM TRA KẾT QUẢ</h1>
+	<h3 id="kiểm-tra-kết-quả-stop">Kiểm tra kết quả Stop</h3>
 <ol>
-<li></li>
+<li>Kiểm tra giao diện <strong>EC2</strong> và trạng thái <strong>instance</strong></li>
 </ol>
-
+<p align="center">
+  <img src="/images/6/image6.1.png" width="100%">
+</p>
+<ol start="2">
+<li>Vào chức năng <strong>Lambda Function</strong> và thực hiện chức năng <strong>stop instance</strong></li>
+</ol>
+<ul>
+<li>Chọn <strong>Test</strong></li>
+<li>Chọn <strong>Create new event</strong></li>
+<li>Ở dòng <strong>Event name</strong> nhập <code>instance-stop</code></li>
+<li>Ở phần <strong>Event JSON</strong> nhập vào</li>
+</ul>
+<pre tabindex="0"><code>{
+  &#34;action&#34;: &#34;stop&#34;
+}
+</code></pre><ul>
+<li>Chọn <strong>Save</strong></li>
+<li>Chọn <strong>Test</strong></li>
+</ul>
+<p align="center">
+  <img src="/images/6/image6.2.png" width="100%">
+</p>
+<ol start="3">
+<li>Trả về kết quả thành công</li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.3.png" width="100%">
+</p>
+<ol start="4">
+<li>Kiểm tra trong workspace của <strong>Slack</strong> đã nhận được thông báo <strong>Stopped instance</strong></li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.4.png" width="100%">
+</p>
+<ol start="5">
+<li>Kiểm tra lại trang thái <strong>instance</strong> ở giao diện <strong>EC2</strong></li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.5.png" width="100%">
+</p>
+<h3 id="kiểm-tra-kết-quả-start">Kiểm tra kết quả Start</h3>
+<ol start="6">
+<li>Tương tự, truy cập vào <strong>Lambda Function</strong> và thực hiện chức năng <strong>start instance</strong></li>
+</ol>
+<ul>
+<li>Chọn <strong>Test</strong></li>
+<li>Chọn <strong>Create new event</strong></li>
+<li>Ở dòng <strong>Event name</strong> nhập <code>instance-start</code></li>
+<li>Ở phần <strong>Event JSON</strong> nhập vào</li>
+</ul>
+<pre tabindex="0"><code>{
+  &#34;action&#34;: &#34;start&#34;
+}
+</code></pre><ul>
+<li>Chọn <strong>Save</strong></li>
+<li>Chọn <strong>Test</strong></li>
+</ul>
+<p align="center">
+  <img src="/images/6/image6.6.png" width="100%">
+</p>
+<ol start="7">
+<li>Trả về kết quả thành công</li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.7.png" width="100%">
+</p>
+<ol start="8">
+<li>Kiểm tra trong workspace của <strong>Slack</strong> đã nhận được thông báo <strong>Started instance</strong></li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.8.png" width="100%">
+</p>
+<ol start="9">
+<li>Kiểm tra lại trang thái <strong>instance</strong> ở giao diện <strong>EC2</strong></li>
+</ol>
+<p align="center">
+  <img src="/images/6/image6.9.png" width="100%">
+</p>
 
 
 
@@ -843,19 +941,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753869915"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753869915"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753869915"></script>
-    <script src="/js/jquery.sticky.js?1753869915"></script>
-    <script src="/js/featherlight.min.js?1753869915"></script>
-    <script src="/js/highlight.pack.js?1753869915"></script>
+    <script src="/js/clipboard.min.js?1753947581"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753947581"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753947581"></script>
+    <script src="/js/jquery.sticky.js?1753947581"></script>
+    <script src="/js/featherlight.min.js?1753947581"></script>
+    <script src="/js/highlight.pack.js?1753947581"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753869915"></script>
-    <script src="/js/learn.js?1753869915"></script>
-    <script src="/js/hugo-learn.js?1753869915"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753947581"></script>
+    <script src="/js/learn.js?1753947581"></script>
+    <script src="/js/hugo-learn.js?1753947581"></script>
 
-    <link href="/mermaid/mermaid.css?1753869915" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753869915"></script>
+    <link href="/mermaid/mermaid.css?1753947581" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753947581"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
