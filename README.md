@@ -89,18 +89,6 @@ Example notification:
 
 ---
 
-## 🖼 Screenshots
-
-<p align="center">
-  <img src="images/example-log.png" width="80%">
-</p>
-
-<p align="center">
-  <img src="images/slack-notification.png" width="80%">
-</p>
-
----
-
 ## 🧠 Common Tasks
 
 | Task                             | Command Example                                          |
