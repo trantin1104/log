@@ -13,14 +13,14 @@ pre: "<b>5.1</b>"
 - Then click to select **Lambda**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.1.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.1.png" | relURL }}" width="100%">
 </p>
 
 2. In the **Functions** section of **Lambda**
 - Select **Create function**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.2.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.2.png" | relURL }}" width="100%">
 </p>
 
 3. In the **Create function** interface
@@ -30,7 +30,7 @@ pre: "<b>5.1</b>"
 - For **Architecture**, select **x86_64**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.3.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.3.png" | relURL }}" width="100%">
 </p>
 
 4. Continue in the **Create function** interface
@@ -40,7 +40,7 @@ pre: "<b>5.1</b>"
 - Finish by clicking **Create function**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.4.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.4.png" | relURL }}" width="100%">
 </p>
 
 5. After successfully creating the function 
@@ -49,14 +49,14 @@ pre: "<b>5.1</b>"
 - Click **Edit**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.5.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.5.png" | relURL }}" width="100%">
 </p>
 
 6. In the **Edit environment variables** interface
 - Click **Add environment variable**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.6.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.6.png" | relURL }}" width="100%">
 </p>
 
 7. In the **Edit environment variables** interface
@@ -65,13 +65,13 @@ pre: "<b>5.1</b>"
 - Click **Save** to complete
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.7.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.7.png" | relURL }}" width="100%">
 </p>
 
 8. After creating successfully, move to the **code** section
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.8.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.8.png" | relURL }}" width="100%">
 </p>
 
 9. In the **Code source** interface
@@ -173,7 +173,7 @@ def sent_slack(action, action_results):
 - After adding the webhook URL, click **Deploy**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.9.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.9.png" | relURL }}" width="100%">
 </p>
 
 10. Go to [AWS Management Console](https://aws.amazon.com/console/)  
@@ -181,14 +181,14 @@ def sent_slack(action, action_results):
 - Then click to select **Amazon EventBridge**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.10.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.10.png" | relURL }}" width="100%">
 </p>
 
 11. In the **Rules** interface  
 - Select **Create rule**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.11.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.11.png" | relURL }}" width="100%">
 </p>
 
 12. In the **Define rule detail** section of the **Create rule** interface  
@@ -198,7 +198,7 @@ def sent_slack(action, action_results):
 - Click **Continue to create rule**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.12.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.12.png" | relURL }}" width="100%">
 </p>
 
 13. In the **Schedule pattern** section  
@@ -219,7 +219,7 @@ def sent_slack(action, action_results):
 | Year         | `*`    | Every year                       |
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.13.1.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.13.1.png" | relURL }}" width="100%">
 </p>
 
 - Then click **Next**
@@ -232,17 +232,17 @@ def sent_slack(action, action_results):
 - Click **Next**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.14.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.14.png" | relURL }}" width="100%">
 </p>
 
 15. Review everything and click **Create rule** to complete
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.15.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.15.png" | relURL }}" width="100%">
 </p>
 
 16. The rule for stopping instances has been successfully created
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.16.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.16.png" | relURL }}" width="100%">
 </p>

@@ -13,14 +13,14 @@ pre: "<b>5.1</b>"
 - Sau đó hãy bấm vào chọn **Lambda**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.1.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.1.png" | relURL }}" width="100%">
 </p>
 
 2. Tại **Functions** trong **Lambda**
 - Chọn **Create function**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.2.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.2.png" | relURL }}" width="100%">
 </p>
 
 3. Trong giao diện **Create function**
@@ -30,7 +30,7 @@ pre: "<b>5.1</b>"
 - Còn lại **Architecture** hãy chọn **x86_64**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.3.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.3.png" | relURL }}" width="100%">
 </p>
 
 4. Tiếp tục ở giao diện **Create function**
@@ -40,7 +40,7 @@ pre: "<b>5.1</b>"
 - Hoàn thành **Create function**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.4.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.4.png" | relURL }}" width="100%">
 </p>
 
 5. Sau khi tạo thành công function 
@@ -49,14 +49,14 @@ pre: "<b>5.1</b>"
 - Chọn **Edit**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.5.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.5.png" | relURL }}" width="100%">
 </p>
 
 6. Trong giao diện **Edit environment variables**
 - Chọn **Add environment variable**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.6.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.6.png" | relURL }}" width="100%">
 </p>
 
 7. Tại giao diện **Edit environment variables**
@@ -65,13 +65,13 @@ pre: "<b>5.1</b>"
 - Chọn **Save** để hoàn tất
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.7.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.7.png" | relURL }}" width="100%">
 </p>
 
 8. Sau khi tạo thành công ta đến với **code**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.8.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.8.png" | relURL }}" width="100%">
 </p>
 
 9. Trong giao diện **Code source**
@@ -172,7 +172,7 @@ def sent_slack(action, action_results):
 - Sau khi đã thêm đường dẫn ta nhấn **Deploy**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.9.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.9.png" | relURL }}" width="100%">
 </p>
 
 10. Truy cập vào [AWS Management Consle](https://aws.amazon.com/vi/console/)
@@ -180,14 +180,14 @@ def sent_slack(action, action_results):
 - Sau đó hãy bấm vào chọn **Amazon EvenBridgetch**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.10.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.10.png" | relURL }}" width="100%">
 </p>
 
 11. Trong giao diện **Rules** 
 - Chọn **Create rule**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.11.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.11.png" | relURL }}" width="100%">
 </p>
 
 12. Ở phần **Define rule detail** trong giao diện **create rule**
@@ -197,7 +197,7 @@ def sent_slack(action, action_results):
 - Chọn **Countinue to create rule**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.12.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.12.png" | relURL }}" width="100%">
 </p>
 
 13. Ở phần **Schedule pattern**
@@ -215,7 +215,7 @@ def sent_slack(action, action_results):
     | Year         | `*`     | Mỗi năm                        |
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.13.1.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.13.1.png" | relURL }}" width="100%">
 </p>
 
 - Sau đó hãy bấm **Next**
@@ -228,17 +228,17 @@ def sent_slack(action, action_results):
 - Bấm **Next**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.14.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.14.png" | relURL }}" width="100%">
 </p>
 
 15. Kiểm tra lại và hoàn thành, chọn **Create rule**
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.15.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.15.png" | relURL }}" width="100%">
 </p>
 
 16. Đã tạo thành công rule cho stop insatance
 
 <p align="center">
-  <img src="/images/5/5.1/image5.1.16.png" width="100%">
+  <img src="{{ "/images/5/5.1/image5.1.16.png" | relURL }}" width="100%">
 </p>
