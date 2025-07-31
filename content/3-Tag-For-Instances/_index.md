@@ -16,14 +16,14 @@ pre: "<b>3.</b>"
 - Then select **Manage tags**
 
 <p align="center">
-  <img src="{{ "/images/3/image3.1.png" | absURL }}" width="100%">
+  <img src="{{ "/images/3/image3.1.png" | relURL }}" width="100%">
 </p>
 
 2. In the **Manage tags** screen:  
 - Click **Add new tag**
 
 <p align="center">
-  <img src="{{ "/images/3/image3.2.png" | absURL }}" width="100%">
+  <img src="{{ "/images/3/image3.2.png" | relURL }}" width="100%">
 </p>
 
 3. When the **Add new tag** interface appears:  
@@ -32,11 +32,11 @@ pre: "<b>3.</b>"
 - Then click **Save**
 
 <p align="center">
-  <img src="{{ "/images/3/image3.3.png" | absURL }}" width="100%">
+  <img src="{{ "/images/3/image3.3.png" | relURL }}" width="100%">
 </p>
 
 4. Success message displayed
 
 <p align="center">
-  <img src="{{ "/images/3/image3.4.png" | absURL }}" width="100%">
+  <img src="{{ "/images/3/image3.4.png" | relURL }}" width="100%">
 </p>

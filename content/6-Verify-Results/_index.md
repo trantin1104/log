@@ -11,7 +11,7 @@ pre: "<b>6.</b>"
 1. Check the **EC2** interface and the **instance** status
 
 <p align="center">
-  <img src="{{ "/images/6/image6.1.png" | absURL }}" width="100%">
+  <img src="{{ "/images/6/image6.1.png" | relURL }}" width="100%">
 </p>
 
 2. Go to the **Lambda Function** and execute the **stop instance** function
@@ -29,25 +29,25 @@ pre: "<b>6.</b>"
 - Click **Test**
 
 <p align="center">
-  <img src="{{ "/images/6/image6.2.png" | absURL }}" width="100%">
+  <img src="{{ "/images/6/image6.2.png" | relURL }}" width="100%">
 </p>
 
 3. A successful result is returned
 
 <p align="center">
-  <img src="{{ "/images/6/image6.3.png" | absURL }}" width="100%">
+  <img src="{{ "/images/6/image6.3.png" | relURL }}" width="100%">
 </p>
 
 4. Check your **Slack** workspace to confirm that a **Stopped instance** notification has been received
 
 <p align="center">
-  <img src="{{ "/images/6/image6.4.png" | absURL }}" width="100%">
+  <img src="{{ "/images/6/image6.4.png" | relURL }}" width="100%">
 </p>
 
 5. Recheck the **instance** status in the **EC2** interface
 
 <p align="center">
-  <img src="{{ "/images/6/image6.5.png" | absURL }}" width="100%">
+  <img src="{{ "/images/6/image6.5.png" | relURL }}" width="100%">
 </p>
 
 ### Check Start Results
@@ -67,23 +67,23 @@ pre: "<b>6.</b>"
 - Click **Test**
 
 <p align="center">
-  <img src="{{ "/images/6/image6.6.png" | absURL }}" width="100%">
+  <img src="{{ "/images/6/image6.6.png" | relURL }}" width="100%">
 </p>
 
 7. A successful result is returned
 
 <p align="center">
-  <img src="{{ "/images/6/image6.7.png" | absURL }}" width="100%">
+  <img src="{{ "/images/6/image6.7.png" | relURL }}" width="100%">
 </p>
 
 8. Check your **Slack** workspace to confirm that a **Started instance** notification has been received
 
 <p align="center">
-  <img src="{{ "/images/6/image6.8.png" | absURL }}" width="100%">
+  <img src="{{ "/images/6/image6.8.png" | relURL }}" width="100%">
 </p>
 
 9. Recheck the **instance** status in the **EC2** interface
 
 <p align="center">
-  <img src="{{ "/images/6/image6.9.png" | absURL }}" width="100%">
+  <img src="{{ "/images/6/image6.9.png" | relURL }}" width="100%">
 </p>

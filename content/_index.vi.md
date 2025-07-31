@@ -13,7 +13,7 @@ Trong môi trường sử dụng AWS, Amazon EC2 là một trong những dịch 
 
 
 <p align="center">
-  <img src="{{ "/images/index/image.png" | absURL }}" width="70%">
+  <img src="{{ "/images/index/image.png" | relURL }}" width="70%">
 </p>
 
 Thông qua workshop này, bạn sẽ học được cách:

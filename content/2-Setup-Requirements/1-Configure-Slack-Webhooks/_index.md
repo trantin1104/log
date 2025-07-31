@@ -11,19 +11,19 @@ pre: "<b>2.1</b>"
 1. First, log in to [Slack.com](https://slack.com) via your browser.
 
 <p align="center">
-  <img src="{{ "/images/2/2.1/image2.1.1.png" | absURL }}" width="100%">
+  <img src="{{ "/images/2/2.1/image2.1.1.png" | relURL }}" width="100%">
 </p>
 
 2. This is the main interface of Slack after successful login.
 
 <p align="center">
-  <img src="{{ "/images/2/2.1/image2.1.2.png" | absURL }}" width="100%">
+  <img src="{{ "/images/2/2.1/image2.1.2.png" | relURL }}" width="100%">
 </p>
 
 3. Next, access [Incoming WebHooks](https://awslambdalabs-jdo4875.slack.com/marketplace/A0F7XDUAZ-webhooks-entrants) and click **Add to Slack**.
 
 <p align="center">
-  <img src="{{ "/images/2/2.1/image2.1.3.png" | absURL }}" width="100%">
+  <img src="{{ "/images/2/2.1/image2.1.3.png" | relURL }}" width="100%">
 </p>
 
 4. When clicked, you’ll be prompted to **Create Another Workspace**. Click on it.
@@ -31,23 +31,23 @@ pre: "<b>2.1</b>"
 5. This is the interface that appears after clicking **Create Another Workspace**. Enter the name `aws-lambda-labs` and then select **Following**.
 
 <p align="center">
-  <img src="{{ "/images/2/2.1/image2.1.5.png" | absURL }}" width="100%">
+  <img src="{{ "/images/2/2.1/image2.1.5.png" | relURL }}" width="100%">
 </p>
 
 6. Next, enter your name and click **Following**.
 
 <p align="center">
-  <img src="{{ "/images/2/2.1/image2.1.6.png" | absURL }}" width="100%">
+  <img src="{{ "/images/2/2.1/image2.1.6.png" | relURL }}" width="100%">
 </p>
 
 7. Skip this step if you are working alone.
 
 <p align="center">
-  <img src="{{ "/images/2/2.1/image2.1.7.png" | absURL }}" width="100%">
+  <img src="{{ "/images/2/2.1/image2.1.7.png" | relURL }}" width="100%">
 </p>
 
 8. Done.
 
 <p align="center">
-  <img src="{{ "/images/2/2.1/image2.1.8.png" | absURL }}" width="100%">
+  <img src="{{ "/images/2/2.1/image2.1.8.png" | relURL }}" width="100%">
 </p>
