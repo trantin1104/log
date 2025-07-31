@@ -1,3 +1,4 @@
+baseURL = "https://trantin1104.github.io/log/"
 theme = "hugo-theme-learn"
 
 [outputs]
@@ -11,7 +12,6 @@ home = [ "HTML", "RSS", "JSON"]
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
-
 
 [Languages]
 

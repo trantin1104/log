@@ -2,197 +2,197 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/vi/2-setup-requirements/1-configure-slack-webhooks/</loc>
+    <loc>http://localhost:1313/log/vi/2-setup-requirements/1-configure-slack-webhooks/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-setup-requirements/1-configure-slack-webhooks/"
+                href="http://localhost:1313/log/2-setup-requirements/1-configure-slack-webhooks/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-setup-requirements/1-configure-slack-webhooks/"
+                href="http://localhost:1313/log/vi/2-setup-requirements/1-configure-slack-webhooks/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-create-lambda-function/1-function-stop-instance/</loc>
+    <loc>http://localhost:1313/log/vi/5-create-lambda-function/1-function-stop-instance/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-create-lambda-function/1-function-stop-instance/"
+                href="http://localhost:1313/log/5-create-lambda-function/1-function-stop-instance/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-create-lambda-function/1-function-stop-instance/"
+                href="http://localhost:1313/log/vi/5-create-lambda-function/1-function-stop-instance/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/1-introduction/</loc>
+    <loc>http://localhost:1313/log/vi/1-introduction/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/1-introduction/"
+                href="http://localhost:1313/log/1-introduction/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/1-introduction/"
+                href="http://localhost:1313/log/vi/1-introduction/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/</loc>
+    <loc>http://localhost:1313/log/vi/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="http://localhost:1313/log/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/"
+                href="http://localhost:1313/log/vi/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-setup-requirements/</loc>
+    <loc>http://localhost:1313/log/vi/2-setup-requirements/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-setup-requirements/"
+                href="http://localhost:1313/log/2-setup-requirements/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-setup-requirements/"
+                href="http://localhost:1313/log/vi/2-setup-requirements/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-create-lambda-function/2-function-start-instance/</loc>
+    <loc>http://localhost:1313/log/vi/5-create-lambda-function/2-function-start-instance/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-create-lambda-function/2-function-start-instance/"
+                href="http://localhost:1313/log/5-create-lambda-function/2-function-start-instance/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-create-lambda-function/2-function-start-instance/"
+                href="http://localhost:1313/log/vi/5-create-lambda-function/2-function-start-instance/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-setup-requirements/2-create-vpc/</loc>
+    <loc>http://localhost:1313/log/vi/2-setup-requirements/2-create-vpc/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-setup-requirements/2-create-vpc/"
+                href="http://localhost:1313/log/2-setup-requirements/2-create-vpc/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-setup-requirements/2-create-vpc/"
+                href="http://localhost:1313/log/vi/2-setup-requirements/2-create-vpc/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-setup-requirements/3-create-security-gruop/</loc>
+    <loc>http://localhost:1313/log/vi/2-setup-requirements/3-create-security-gruop/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-setup-requirements/3-create-security-gruop/"
+                href="http://localhost:1313/log/2-setup-requirements/3-create-security-gruop/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-setup-requirements/3-create-security-gruop/"
+                href="http://localhost:1313/log/vi/2-setup-requirements/3-create-security-gruop/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-tag-for-instances/</loc>
+    <loc>http://localhost:1313/log/vi/3-tag-for-instances/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-tag-for-instances/"
+                href="http://localhost:1313/log/3-tag-for-instances/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-tag-for-instances/"
+                href="http://localhost:1313/log/vi/3-tag-for-instances/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-setup-requirements/4-create-ec2-instance/</loc>
+    <loc>http://localhost:1313/log/vi/2-setup-requirements/4-create-ec2-instance/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-setup-requirements/4-create-ec2-instance/"
+                href="http://localhost:1313/log/2-setup-requirements/4-create-ec2-instance/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-setup-requirements/4-create-ec2-instance/"
+                href="http://localhost:1313/log/vi/2-setup-requirements/4-create-ec2-instance/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-create-iam-role-for-lambda/</loc>
+    <loc>http://localhost:1313/log/vi/4-create-iam-role-for-lambda/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-create-iam-role-for-lambda/"
+                href="http://localhost:1313/log/4-create-iam-role-for-lambda/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-create-iam-role-for-lambda/"
+                href="http://localhost:1313/log/vi/4-create-iam-role-for-lambda/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-create-lambda-function/</loc>
+    <loc>http://localhost:1313/log/vi/5-create-lambda-function/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-create-lambda-function/"
+                href="http://localhost:1313/log/5-create-lambda-function/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-create-lambda-function/"
+                href="http://localhost:1313/log/vi/5-create-lambda-function/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-verify-results/</loc>
+    <loc>http://localhost:1313/log/vi/6-verify-results/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-verify-results/"
+                href="http://localhost:1313/log/6-verify-results/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-verify-results/"
+                href="http://localhost:1313/log/vi/6-verify-results/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/categories/</loc>
+    <loc>http://localhost:1313/log/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/categories/"
+                href="http://localhost:1313/log/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/categories/"
+                href="http://localhost:1313/log/vi/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/tags/</loc>
+    <loc>http://localhost:1313/log/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/tags/"
+                href="http://localhost:1313/log/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/tags/"
+                href="http://localhost:1313/log/vi/tags/"
                 />
   </url>
 </urlset>
