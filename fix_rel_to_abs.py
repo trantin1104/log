@@ -4,10 +4,10 @@ import re
 # Thư mục content của Hugo
 CONTENT_DIR = "content"
 
-# Regex để tìm <img src="/images/...">
-pattern = re.compile(r'<img\s+[^>]*src="(/images/[^"]+)"([^>]*)>', re.IGNORECASE)
+# Regex tìm relURL trong cú pháp Hugo
+pattern = re.compile(r'\| *relURL *}}', re.IGNORECASE)
 
-def fix_image_paths():
+def fix_rel_to_abs():
     for root, _, files in os.walk(CONTENT_DIR):
         for file in files:
             if file.endswith(".md") or file.endswith(".markdown"):
@@ -16,18 +16,14 @@ def fix_image_paths():
                 with open(path, "r", encoding="utf-8") as f:
                     content = f.read()
 
-                # Thay đường dẫn ảnh
-                new_content = pattern.sub(
-                    lambda m: f'<img src="{{{{ "{m.group(1)}" | relURL }}}}"{m.group(2)}>',
-                    content
-                )
+                # Đổi relURL -> absURL
+                new_content = pattern.sub('| absURL }}', content)
 
-                # Ghi lại nếu có thay đổi
                 if new_content != content:
                     with open(path, "w", encoding="utf-8") as f:
                         f.write(new_content)
-                    print(f"✔ Fixed: {path}")
+                    print(f"✔ Converted: {path}")
 
 if __name__ == "__main__":
-    fix_image_paths()
-    print("🎉 Done! All image paths have been fixed.")
+    fix_rel_to_abs()
+    print("🎉 Done! All relURL have been converted to absURL.")

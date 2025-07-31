@@ -12,7 +12,7 @@ chapter: false
 In an AWS environment, Amazon EC2 is one of the most widely used services—and also a major source of cost if not managed effectively. The **“Optimize EC2 Cost with Lambda”** workshop is designed to help you automate EC2 cost management by using AWS Lambda to shut down EC2 instances when they are not needed—such as outside business hours.
 
 <p align="center">
-  <img src="{{ "/images/index/image.png" | relURL }}" width="70%">
+  <img src="{{ "/images/index/image.png" | absURL }}" width="70%">
 </p>
 
 Through this workshop, you will learn how to:

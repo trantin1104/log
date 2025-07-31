@@ -13,14 +13,14 @@ pre: "<b>5.2</b>"
 - Sau đó hãy bấm vào chọn **Lambda**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.1.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.1.png" | absURL }}" width="100%">
 </p>
 
 2. Tại **Functions** trong **Lambda**
 - Chọn **Create function**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.2.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.2.png" | absURL }}" width="100%">
 </p>
 
 3. Trong giao diện **Create function**
@@ -30,7 +30,7 @@ pre: "<b>5.2</b>"
 - Còn lại **Architecture** hãy chọn **x86_64**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.3.1.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.3.1.png" | absURL }}" width="100%">
 </p>
 
 4. Tiếp tục ở giao diện **Create function**
@@ -40,7 +40,7 @@ pre: "<b>5.2</b>"
 - Hoàn thành **Create function**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.4.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.4.png" | absURL }}" width="100%">
 </p>
 
 5. Sau khi tạo thành công function 
@@ -49,7 +49,7 @@ pre: "<b>5.2</b>"
 - Chọn **Edit**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.5.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.5.png" | absURL }}" width="100%">
 </p>
 
 6. Tại giao diện **Edit environment variables**
@@ -58,13 +58,13 @@ pre: "<b>5.2</b>"
 - Chọn **Save** để hoàn tất
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.6.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.6.png" | absURL }}" width="100%">
 </p>
 
 7. Sau khi tạo thành công ta đến với **code**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.7.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.7.png" | absURL }}" width="100%">
 </p>
 
 8. Trong giao diện **Code source**
@@ -152,7 +152,7 @@ def sent_slack(action_result, action):
 - Sau khi đã thêm đường dẫn ta nhấn **Deploy**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.8.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.8.png" | absURL }}" width="100%">
 </p>
 
 9. Truy cập vào **Amazon EventBridge**
@@ -160,7 +160,7 @@ def sent_slack(action_result, action):
 - Chọn vào **Create rule**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.9.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.9.png" | absURL }}" width="100%">
 </p>
 
 10. Ở phần **Define rule detail** trong giao diện **create rule**
@@ -170,7 +170,7 @@ def sent_slack(action_result, action):
 - Chọn **Countinue to create rule**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.10.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.10.png" | absURL }}" width="100%">
 </p>
 
 11. Ở phần **Schedule pattern**
@@ -188,7 +188,7 @@ def sent_slack(action_result, action):
     | Year         | `*`     | Mỗi năm                        |
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.11.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.11.png" | absURL }}" width="100%">
 </p>
 
 - Sau đó hãy bấm **Next**
@@ -201,17 +201,17 @@ def sent_slack(action_result, action):
 - Bấm **Next**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.12.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.12.png" | absURL }}" width="100%">
 </p>
 
 13. Kiểm tra lại và hoàn thành, chọn **Create rule**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.13.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.13.png" | absURL }}" width="100%">
 </p>
 
 14. Đã tạo thành công rule cho start insatance
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.14.png" | relURL }}" width="100%">
+  <img src="{{ "/images/5/5.2/image5.2.14.png" | absURL }}" width="100%">
 </p>
