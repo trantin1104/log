@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title> ADD TAG TO INSTANCE on Create a new AWS account.</title>
-    <link>http://localhost:1313/log/3-tag-for-instances/</link>
+    <link>https://trantin1104.github.io/log/3-tag-for-instances/</link>
     <description>Recent content in  ADD TAG TO INSTANCE on Create a new AWS account.</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/log/3-tag-for-instances/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://trantin1104.github.io/log/3-tag-for-instances/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

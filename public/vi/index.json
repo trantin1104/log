@@ -1,104 +1,104 @@
 [
 {
-	"uri": "http://localhost:1313/log/vi/2-setup-requirements/1-configure-slack-webhooks/",
+	"uri": "https://trantin1104.github.io/log/vi/2-setup-requirements/1-configure-slack-webhooks/",
 	"title": " Cấu hình Web-hooks Slack",
 	"tags": [],
 	"description": "",
 	"content": "Hướng dẫn sử dụng WEB-HOOKS trên SLACK Đầu tiên, hãy đăng nhập vào Slack.com thông qua trình duyệt của bạn. Đây là giao diện chính của Slack sau khi chúng ta đã đăng nhập thành công. Tiếp theo, chúng ta truy cập vào Incoming WebHooks và chọn Add to Slack. Khi bấm vào, bạn sẽ nhận được yêu cầu Create Another Workspace. Hãy nhấn vào nó.\nĐây là giao diện được hiện lên sau khi bạn nhấn vào Create Another Workspace. Nhập tên là aws-lambda-labs và sau đó chọn Following.\nTiếp theo hập tên cảu bạn sao đó bấm Following Bỏ qua bước này nếu bạn chỉ làm 1 mình Hoàn tất "
 },
 {
-	"uri": "http://localhost:1313/log/vi/5-create-lambda-function/1-function-stop-instance/",
+	"uri": "https://trantin1104.github.io/log/vi/5-create-lambda-function/1-function-stop-instance/",
 	"title": " Function to Stop Instances",
 	"tags": [],
 	"description": "",
 	"content": "Tạo Lambda Function thực hiện chức năng Stop instances Truy cập vào AWS Management Consle Nhập vào tìm Lambda Sau đó hãy bấm vào chọn Lambda Tại Functions trong Lambda Chọn Create function Trong giao diện Create function Chọn Author from scratch Ở Function name đặt dc-common-lambda-auto-stop Trong phần Runtime chọn Python 3.13 Còn lại Architecture hãy chọn x86_64 Tiếp tục ở giao diện Create function Chọn Change default execution role Ở Execution role chọn Use an existing role Ở Existing role chọn IAM role vừa tạo Hoàn thành Create function Sau khi tạo thành công function Chọn Configuration Tại thanh bên trái, chọn Environment variables Chọn Edit Trong giao diện Edit environment variables Chọn Add environment variable Tại giao diện Edit environment variables Ở Key nhập environment_auto Ở Value nhập true Chọn Save để hoàn tất Sau khi tạo thành công ta đến với code Trong giao diện Code source Import source code: Cần phải thay đổi webhook_url để nhận thông báo đến Slack. import boto3 import os import json import urllib3 from datetime import datetime, timedelta, timezone ec2_resource = boto3.resource(\u0026#39;ec2\u0026#39;) http = urllib3.PoolManager() webhook_url = \u0026#34;https://hooks.slack.com/services/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\u0026#34; ACTION_VERB = { \u0026#34;start\u0026#34;: \u0026#34;Started\u0026#34;, \u0026#34;stop\u0026#34;: \u0026#34;Stopped\u0026#34; } def lambda_handler(event, context): environment_auto = os.environ.get(\u0026#39;environment_auto\u0026#39;) action = event.get(\u0026#39;action\u0026#39;, \u0026#39;\u0026#39;).lower() print(f\u0026#34;[DEBUG] environment_auto = {environment_auto}\u0026#34;) print(f\u0026#34;[DEBUG] action = {action}\u0026#34;) if not environment_auto: return { \u0026#34;statusCode\u0026#34;: 400, \u0026#34;body\u0026#34;: \u0026#34;Missing environment_auto\u0026#34; } if action not in [\u0026#39;start\u0026#39;, \u0026#39;stop\u0026#39;]: return { \u0026#34;statusCode\u0026#34;: 400, \u0026#34;body\u0026#34;: \u0026#34;Invalid action. Must be \u0026#39;start\u0026#39; or \u0026#39;stop\u0026#39;.\u0026#34; } instances = ec2_resource.instances.filter( Filters=[{\u0026#39;Name\u0026#39;: \u0026#39;tag:environment_auto\u0026#39;, \u0026#39;Values\u0026#39;: [environment_auto]}] ) instance_list = list(instances) print(f\u0026#34;[DEBUG] Instances found: {instance_list}\u0026#34;) if not instance_list: print(f\u0026#34;[INFO] No EC2 instances found for action \u0026#39;{action}\u0026#39;\u0026#34;) return { \u0026#34;statusCode\u0026#34;: 404, \u0026#34;body\u0026#34;: \u0026#34;No EC2 instances found\u0026#34; } action_results = [] for instance in instance_list: if action == \u0026#39;start\u0026#39;: result = instance.start() else: result = instance.stop() action_results.append(result) sent_slack(action, action_results) return { \u0026#34;statusCode\u0026#34;: 200, \u0026#34;body\u0026#34;: f\u0026#34;{ACTION_VERB[action]} {len(instance_list)} EC2 instance(s)\u0026#34; } def sent_slack(action, action_results): instance_ids = [] key = \u0026#34;StartingInstances\u0026#34; if action == \u0026#34;start\u0026#34; else \u0026#34;StoppingInstances\u0026#34; for result in action_results: if key in result and len(result[key]) \u0026gt; 0: for i in result[key]: instance_ids.append(i[\u0026#34;InstanceId\u0026#34;]) if instance_ids: now = datetime.now(timezone.utc) + timedelta(hours=7) current_time = now.strftime(\u0026#34;%H:%M:%S %d-%m-%Y\u0026#34;) instance_list_str = \u0026#34;\\n• \u0026#34; + \u0026#34;\\n• \u0026#34;.join(instance_ids) msg = ( f\u0026#34;{\u0026#39;✅ Started\u0026#39; if action == \u0026#39;start\u0026#39; else \u0026#39;⛔ Stopped\u0026#39;} EC2 Instances:\\n\u0026#34; f\u0026#34;{instance_list_str}\\n\u0026#34; f\u0026#34;🕒 Time: {current_time} (Asia/Ho_Chi_Minh)\u0026#34; ) data = {\u0026#34;text\u0026#34;: msg} r = http.request(\u0026#34;POST\u0026#34;, webhook_url, body=json.dumps(data), headers={\u0026#34;Content-Type\u0026#34;: \u0026#34;application/json\u0026#34;}) print(f\u0026#34;[DEBUG] Slack response status: {r.status}\u0026#34;) else: print(f\u0026#34;[INFO] No instances {ACTION_VERB[action]}\u0026#34;) Sau khi đã thêm đường dẫn ta nhấn Deploy Truy cập vào AWS Management Consle Nhập vào tìm Amazon EvenBridge Sau đó hãy bấm vào chọn Amazon EvenBridgetch Trong giao diện Rules Chọn Create rule Ở phần Define rule detail trong giao diện create rule Ở Name nhập dc-common-lambda-auto-stop Ở Description nhập dc-common-lambda-auto-stop Chọn Schedule Chọn Countinue to create rule Ở phần Schedule pattern Ở Occurrence chọn Recurring schedule Ở Time zone chọn (UTC+07:00) Asia/Saigon \u0026ldquo;Bạn muốn EventBridge Rule dừng 17 giờ mỗi ngày từ thứ Hai đến thứ Sáu (trừ thứ 7 và Chủ nhật) theo giờ Việt Nam (ICT, UTC+7). Trên AWS EventBridge, cron dùng UTC, nên phải trừ 7 tiếng\u0026rdquo; Ở Schedule type chọn Cron-based schedule Trong phần Cron expression Trường Giá trị Ý nghĩa Minutes 0 Vào phút 00 Hours 10 10 giờ UTC (tức 17 giờ VN) Day of month ? Bỏ qua ngày trong tháng Month * Mỗi tháng Day of week 2-6 Từ thứ 2 đến thứ 6 Year * Mỗi năm Sau đó hãy bấm Next Ở phần Select target(s) Chọn AWS service Ở Select a target chọn Lambda function Ở Function chọn dc-common-lamda-auto-stop Ở Execution role tích vào Use existing role rồi chọn dc-common-lamda-role Bấm Next Kiểm tra lại và hoàn thành, chọn Create rule Đã tạo thành công rule cho stop insatance "
 },
 {
-	"uri": "http://localhost:1313/log/vi/1-introduction/",
+	"uri": "https://trantin1104.github.io/log/vi/1-introduction/",
 	"title": " GIỚI THIỆU",
 	"tags": [],
 	"description": "",
 	"content": "GIỚI THIỆU Trong quá trình sử dụng hạ tầng đám mây AWS, nhiều doanh nghiệp thường gặp tình trạng lãng phí tài nguyên, đặc biệt là các EC2 instance chạy liên tục mà không thực sự cần thiết. Việc không giám sát và tối ưu những instance này có thể dẫn đến chi phí vận hành tăng cao một cách không kiểm soát.\nMục tiêu Workshop Workshop “Optimize EC2 Cost with Lambda” được xây dựng nhằm giúp người dùng:\nTự động hóa việc bật/tắt EC2 instance dựa trên lịch trình hoặc điều kiện nhất định. Sử dụng AWS Lambda để điều khiển EC2 một cách hiệu quả và không cần quản lý hạ tầng (serverless). Giảm thiểu chi phí vận hành hạ tầng cloud bằng các bước thiết lập đơn giản và dễ tái sử dụng. AWS Lambda là dịch vụ điện toán không máy chủ (serverless), cho phép bạn chạy code mà không cần cung cấp hoặc quản lý máy chủ.\n"
 },
 {
-	"uri": "http://localhost:1313/log/vi/",
+	"uri": "https://trantin1104.github.io/log/vi/",
 	"title": " TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA",
 	"tags": [],
 	"description": "",
 	"content": "TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA Tổng quan Trong môi trường sử dụng AWS, Amazon EC2 là một trong những dịch vụ phổ biến và cũng là nguồn chi phí lớn nếu không được quản lý hiệu quả. Workshop “Optimize EC2 Cost with Lambda” được thiết kế nhằm giúp bạn tự động hóa việc quản lý chi phí EC2 bằng cách sử dụng AWS Lambda để tắt các EC2 instance khi không cần thiết – ví dụ ngoài giờ hành chính.\nThông qua workshop này, bạn sẽ học được cách:\nGắn thẻ (tag) cho các EC2 instance để phân biệt instance cần tối ưu. Tạo IAM Role để Lambda có thể kiểm soát EC2. Viết hàm Lambda bật/tắt EC2 tự động theo lịch trình. Kiểm tra kết quả và dọn dẹp tài nguyên. Mục tiêu Giúp người học:\nNắm được cách tích hợp Lambda với EC2. Tối ưu hóa chi phí sử dụng EC2. Tăng tính tự động hóa trong vận hành hạ tầng cloud. Điều kiện cần Để thực hiện workshop này, bạn cần có:\nTài khoản AWS có quyền quản trị (AdministratorAccess). Kiến thức cơ bản về EC2, IAM và Lambda. Trình duyệt web và kết nối Internet ổn định. Nội dung chính Giới thiệu Các bước chuẩn bị Tạo tag cho instance Tạo IAM role cho Lambda Tạo Lambda Function Kiểm tra kết quả Dọn dẹp tài nguyên "
 },
 {
-	"uri": "http://localhost:1313/log/vi/2-setup-requirements/",
+	"uri": "https://trantin1104.github.io/log/vi/2-setup-requirements/",
 	"title": " CÁC BƯỚC CHUẨN BỊ",
 	"tags": [],
 	"description": "",
 	"content": " Cấu hình Slack Webhooks Tạo VPC Tạo Security Group Tạo EC2 Instance "
 },
 {
-	"uri": "http://localhost:1313/log/vi/5-create-lambda-function/2-function-start-instance/",
+	"uri": "https://trantin1104.github.io/log/vi/5-create-lambda-function/2-function-start-instance/",
 	"title": " Function to Start Instances",
 	"tags": [],
 	"description": "",
 	"content": "Tạo Lambda Function thực hiện chức năng Start instances Truy cập vào AWS Management Consle Nhập vào tìm Lambda Sau đó hãy bấm vào chọn Lambda Tại Functions trong Lambda Chọn Create function Trong giao diện Create function Chọn Author from scratch Ở Function name đặt dc-common-lambda-auto-start Trong phần Runtime chọn Python 3.13 Còn lại Architecture hãy chọn x86_64 Tiếp tục ở giao diện Create function Chọn Change default execution role Ở Execution role chọn Use an existing role Ở Existing role chọn IAM role vừa tạo Hoàn thành Create function Sau khi tạo thành công function Chọn Configuration Tại thanh bên trái, chọn Environment variables Chọn Edit Tại giao diện Edit environment variables Ở Key nhập environment_auto Ở Value nhập true Chọn Save để hoàn tất Sau khi tạo thành công ta đến với code Trong giao diện Code source Import source code: Cần phải thay đổi webhook_url để nhận thông báo đến Slack. import boto3 import os import json import urllib3 from datetime import datetime, timedelta, timezone ec2_resource = boto3.resource(\u0026#39;ec2\u0026#39;) http = urllib3.PoolManager() webhook_url = \u0026#34;https://hooks.slack.com/services/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\u0026#34; def lambda_handler(event, context): # Lấy biến môi trường và action từ input environment_auto = os.environ.get(\u0026#39;environment_auto\u0026#39;) action = event.get(\u0026#34;action\u0026#34;, \u0026#34;\u0026#34;).lower() print(f\u0026#34;[DEBUG] environment_auto = {environment_auto}\u0026#34;) print(f\u0026#34;[DEBUG] action = {action}\u0026#34;) if not environment_auto or action not in [\u0026#34;start\u0026#34;, \u0026#34;stop\u0026#34;]: return { \u0026#34;statusCode\u0026#34;: 400, \u0026#34;body\u0026#34;: \u0026#34;Missing environment_auto or invalid action\u0026#34; } # Lọc EC2 theo tag instances = ec2_resource.instances.filter( Filters=[{\u0026#39;Name\u0026#39;: \u0026#39;tag:environment_auto\u0026#39;, \u0026#39;Values\u0026#39;: [environment_auto]}] ) instance_list = list(instances) print(f\u0026#34;[DEBUG] Instances found: {instance_list}\u0026#34;) if not instance_list: return { \u0026#34;statusCode\u0026#34;: 404, \u0026#34;body\u0026#34;: \u0026#34;No EC2 instances found\u0026#34; } action_result = [] for instance in instance_list: if action == \u0026#34;start\u0026#34;: result = instance.start() else: result = instance.stop() action_result.append(result) sent_slack(action_result, action) return { \u0026#34;statusCode\u0026#34;: 200, \u0026#34;body\u0026#34;: f\u0026#34;{action.capitalize()}ed {len(instance_list)} EC2 instance(s)\u0026#34; } def sent_slack(action_result, action): instance_ids = [] key = \u0026#34;StartingInstances\u0026#34; if action == \u0026#34;start\u0026#34; else \u0026#34;StoppingInstances\u0026#34; for result in action_result: if key in result and len(result[key]) \u0026gt; 0: for i in result[key]: instance_ids.append(i[\u0026#34;InstanceId\u0026#34;]) if instance_ids: # Lấy thời gian hiện tại theo UTC+7 (giờ VN) now = datetime.now(timezone.utc) + timedelta(hours=7) current_time = now.strftime(\u0026#34;%H:%M:%S %d-%m-%Y\u0026#34;) msg = f\u0026#34;{\u0026#39;✅ Starting\u0026#39; if action == \u0026#39;start\u0026#39; else \u0026#39;⛔ Stopping\u0026#39;} Instances ID:\\n{instance_ids}\\n🕒 Time: {current_time} (Asia/Ho_Chi_Minh)\u0026#34; data = {\u0026#34;text\u0026#34;: msg} r = http.request(\u0026#34;POST\u0026#34;, webhook_url, body=json.dumps(data), headers={\u0026#34;Content-Type\u0026#34;: \u0026#34;application/json\u0026#34;}) print(f\u0026#34;[DEBUG] Slack response status: {r.status}\u0026#34;) else: print(f\u0026#34;[INFO] No instances {action}ed\u0026#34;) Sau khi đã thêm đường dẫn ta nhấn Deploy Truy cập vào Amazon EventBridge Chọn Rules Chọn vào Create rule Ở phần Define rule detail trong giao diện create rule Ở Name nhập dc-common-lambda-auto-start Ở Description nhập dc-common-lambda-auto-start Chọn Schedule Chọn Countinue to create rule Ở phần Schedule pattern Ở Occurrence chọn Recurring schedule Ở Time zone chọn (UTC+07:00) Asia/Saigon \u0026ldquo;Bạn muốn EventBridge Rule bật lúc 9 giờ mỗi ngày từ thứ Hai đến thứ Sáu (trừ thứ 7 và Chủ nhật) theo giờ Việt Nam (ICT, UTC+7). Trên AWS EventBridge, cron dùng UTC, nên phải trừ 7 tiếng\u0026rdquo; Ở Schedule type chọn Cron-based schedule Trong phần Cron expression Trường Giá trị Ý nghĩa Minutes 0 Vào phút 00 Hours 2 2 giờ UTC (tức 9 giờ VN) Day of month ? Bỏ qua ngày trong tháng Month * Mỗi tháng Day of week 2-6 Từ thứ 2 đến thứ 6 Year * Mỗi năm Sau đó hãy bấm Next Ở phần Select target(s) Chọn AWS service Ở Select a target chọn Lambda function Ở Function chọn dc-common-lamda-auto-stop Ở Execution role tích vào Use existing role rồi chọn dc-common-lamda-role Bấm Next Kiểm tra lại và hoàn thành, chọn Create rule Đã tạo thành công rule cho start insatance "
 },
 {
-	"uri": "http://localhost:1313/log/vi/2-setup-requirements/2-create-vpc/",
+	"uri": "https://trantin1104.github.io/log/vi/2-setup-requirements/2-create-vpc/",
 	"title": " Tạo VPC",
 	"tags": [],
 	"description": "",
 	"content": "Hướng dẫn tạo VPC Truy cập vào AWS Management Consle Nhập vào tìm VPC Sau đó hãy bấm vào chọn VPC Trong giao diện VPC Đầu tiên hãy chọn Your VPCs Bấm vào Create VPC Trong giao diện Create VPC Chọn VPC and more Nhập vào lambda-lab Kéo xuống dưới cùng vào nhấn vào Create VPC Chọn vào View VPC Đã tạo thành công VPC Tiếp theo trong giao diện VPC Chọn Subnets Chọn vào public subnet Chọn Actions Cuối cùng bấm vào Edit subnet settings Bấm chọn vào Enable auto-asign public IPv4 address, rồi chọn vào Save Đã bật thành công "
 },
 {
-	"uri": "http://localhost:1313/log/vi/2-setup-requirements/3-create-security-gruop/",
+	"uri": "https://trantin1104.github.io/log/vi/2-setup-requirements/3-create-security-gruop/",
 	"title": " Tạo Security Group",
 	"tags": [],
 	"description": "",
 	"content": "Hướng dẫn tạo Security Gruop Trong giao diện VPC Chọn vào Security Group Sau đó chọn Create security gruop Trong Create security group Nhập lambda-lab vào Security gruop name Nhập security group for lambda lab vào Description Trong ô VPC chọn VPC vừa mới tạo Tiếp tục đến phần Inbound rules Chọn vào Add rule Cấu hình Inbound rules và Outbound rules Bấm vào Create security group "
 },
 {
-	"uri": "http://localhost:1313/log/vi/3-tag-for-instances/",
+	"uri": "https://trantin1104.github.io/log/vi/3-tag-for-instances/",
 	"title": " TẠO TAG CHO INSTANCE",
 	"tags": [],
 	"description": "",
 	"content": "Tạo Tag cho Instance Trong giao diện EC2 Chọn Instances Chọn lambda-lab-instance Chọn Actions Chọn Instance settings Chọn Manage tags Trong giao diện Manage tags Chọn vào Add new tag Khi giao diện Add new tag xuất hiện Tại Key, nhập environment_auto Tại Value, nhập true Chọn Save Thông báo thành công "
 },
 {
-	"uri": "http://localhost:1313/log/vi/2-setup-requirements/4-create-ec2-instance/",
+	"uri": "https://trantin1104.github.io/log/vi/2-setup-requirements/4-create-ec2-instance/",
 	"title": " Tạo EC2 Instace",
 	"tags": [],
 	"description": "",
 	"content": "Hướng dẫn tạo EC2 Instace Truy cập vào AWS Management Consle Nhập vào tìm EC2 Sau đó hãy bấm vào chọn EC2 Trong giao diện EC2 Chọn Instaces Chọn tiếp Launch Instance Trong giao diện của Launch Instance Trong mục Name nhập lambda-lab-instance Chọn Amazon Linux Chọn Amazon Linux 2023 kernel-6.12 AMI Ở mục Instance type Chọn t2.micro Tiếp theo ở Key pair Chọn Create new key pair Trong giao diện Create key pair Key pair name nhập vào lambda-lab-key chọn Create key pair Trong phần Network settings chọn Edit Tại Edit của Network settings Chọn VPC vừa được tạo Chọn public-subnet vừa tạo Ở Auto-assign public IP chọn Enable Tiếp theo Select existing security group Chọn Security group vừa tạo Khi đã xong, chọn Launch instance Đã tạo EC2 instance thành công Note: Sau khi tạo EC2 instance, cần đợi vài phút để instance chuyển sang trạng thái running và các dịch vụ bên trong khởi chạy hoàn tất. Lúc đó mới có thể SSH hoặc truy cập web server (nếu có).\n"
 },
 {
-	"uri": "http://localhost:1313/log/vi/4-create-iam-role-for-lambda/",
+	"uri": "https://trantin1104.github.io/log/vi/4-create-iam-role-for-lambda/",
 	"title": " TẠO IAM ROLE CHO LAMBDA",
 	"tags": [],
 	"description": "",
 	"content": "Tạo IAM Role cho Lambda Truy cập vào AWS Management Consle Nhập vào tìm IAM Sau đó hãy bấm vào chọn IAM Tại giao diện IAM Nhấn vào Roles Ở tại giao diện Roles nhấn vào Create role Ở giao diện Select trusted entity Tại Trusted entity type chọn AWS service Tại Use case chọn Lambda Chọn Next Tiếp theo, ở giao diện Add permissions Tìm CloudWatchFullAccess Chọn CloudWatchFullAccess Tiếp tục thực hiện theo bước 4 Tìm CloudWatchFullAccess Chọn CloudWatchFullAccess Cuối cùng, hãy chọn Next Tại giao diện tiếp theo Name, review, and create Nhập dc-common-lambda-role cho Role name Nhìn phía dưới sẽ thấy Step 2: Add permissions Kiểm tra Policy name tại Permissions policy summary Sau khi đã kiểm tra xong thì chọn Create role Role cho Lamda Function đã được tạo thành công "
 },
 {
-	"uri": "http://localhost:1313/log/vi/5-create-lambda-function/",
+	"uri": "https://trantin1104.github.io/log/vi/5-create-lambda-function/",
 	"title": " TẠO LAMBDA FUNCTION",
 	"tags": [],
 	"description": "",
 	"content": "Tạo Lambda Function Tiếp theo, chúng ta sẽ thực hành tạo hai Lambda Function – bước quan trọng trong quá trình triển khai hệ thống.\nTạo Lambda Function thực hiện chức năng Stop instances Tạo Lambda Function thực hiện chức năng Start instances "
 },
 {
-	"uri": "http://localhost:1313/log/vi/6-verify-results/",
+	"uri": "https://trantin1104.github.io/log/vi/6-verify-results/",
 	"title": " KIỂM TRA KẾT QUẢ",
 	"tags": [],
 	"description": "",
 	"content": "Kiểm tra kết quả Stop Kiểm tra giao diện EC2 và trạng thái instance Vào chức năng Lambda Function và thực hiện chức năng stop instance Chọn Test Chọn Create new event Ở dòng Event name nhập instance-stop Ở phần Event JSON nhập vào {\r\u0026#34;action\u0026#34;: \u0026#34;stop\u0026#34;\r} Chọn Save Chọn Test Trả về kết quả thành công Kiểm tra trong workspace của Slack đã nhận được thông báo Stopped instance Kiểm tra lại trang thái instance ở giao diện EC2 Kiểm tra kết quả Start Tương tự, truy cập vào Lambda Function và thực hiện chức năng start instance Chọn Test Chọn Create new event Ở dòng Event name nhập instance-start Ở phần Event JSON nhập vào {\r\u0026#34;action\u0026#34;: \u0026#34;start\u0026#34;\r} Chọn Save Chọn Test Trả về kết quả thành công Kiểm tra trong workspace của Slack đã nhận được thông báo Started instance Kiểm tra lại trang thái instance ở giao diện EC2 "
 },
 {
-	"uri": "http://localhost:1313/log/vi/categories/",
+	"uri": "https://trantin1104.github.io/log/vi/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/log/vi/tags/",
+	"uri": "https://trantin1104.github.io/log/vi/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

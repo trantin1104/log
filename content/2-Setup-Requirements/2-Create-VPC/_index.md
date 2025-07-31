@@ -13,7 +13,7 @@ pre: "<b>2.2</b>"
 - Then click on **VPC**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.1.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.1.png" width="70%">
 </p>
 
 2. In the **VPC** interface:
@@ -21,7 +21,7 @@ pre: "<b>2.2</b>"
 - Click on **Create VPC**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.2.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.2.png" width="70%">
 </p>
 
 3. In the **Create VPC** interface:
@@ -29,25 +29,25 @@ pre: "<b>2.2</b>"
 - Enter `lambda-lab` as the name
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.3.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.3.png" width="70%">
 </p>
 
 4. Scroll to the bottom and click **Create VPC**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.4.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.4.png" width="70%">
 </p>
 
 5. Click on **View VPC**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.5.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.5.png" width="70%">
 </p>
 
 6. **VPC** has been successfully created
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.6.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.6.png" width="70%">
 </p>
 
 7. Next, in the **VPC** interface:
@@ -57,17 +57,17 @@ pre: "<b>2.2</b>"
 - Finally, select **Edit subnet settings**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.7.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.7.png" width="70%">
 </p>
 
 8. Check the box for **Enable auto-assign public IPv4 address**, then click **Save**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.8.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.8.png" width="70%">
 </p>
 
 9. Successfully enabled
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.9.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.9.png" width="70%">
 </p>

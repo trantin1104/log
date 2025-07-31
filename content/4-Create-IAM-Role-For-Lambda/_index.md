@@ -13,7 +13,7 @@ pre: "<b>4.</b>"
 - Then click on **IAM**
 
 <p align="center">
-  <img src="{{ "/images/4/image4.1.png" | relURL }}" width="100%">
+  <img src="/log/images/4/image4.1.png" width="70%">
 </p>
 
 2. In the **IAM** interface:
@@ -21,7 +21,7 @@ pre: "<b>4.</b>"
 - Then click **Create role** in the **Roles** interface
 
 <p align="center">
-  <img src="{{ "/images/4/image4.2.png" | relURL }}" width="100%">
+  <img src="/log/images/4/image4.2.png" width="70%">
 </p>
 
 3. In the **Select trusted entity** screen:
@@ -30,7 +30,7 @@ pre: "<b>4.</b>"
 - Then click **Next**
 
 <p align="center">
-  <img src="{{ "/images/4/image4.3.png" | relURL }}" width="100%">
+  <img src="/log/images/4/image4.3.png" width="70%">
 </p>
 
 4. Next, in the **Add permissions** screen:
@@ -38,7 +38,7 @@ pre: "<b>4.</b>"
 - Select **CloudWatchFullAccess**
 
 <p align="center">
-  <img src="{{ "/images/4/image4.4.png" | relURL }}" width="100%">
+  <img src="/log/images/4/image4.4.png" width="70%">
 </p>
 
 5. Continue the same steps:
@@ -47,14 +47,14 @@ pre: "<b>4.</b>"
 - Then click **Next**
 
 <p align="center">
-  <img src="{{ "/images/4/image4.5.png" | relURL }}" width="100%">
+  <img src="/log/images/4/image4.5.png" width="70%">
 </p>
 
 6. In the **Name, review, and create** screen:
 - Enter `dc-common-lambda-role` for **Role name**
 
 <p align="center">
-  <img src="{{ "/images/4/image4.6.png" | relURL }}" width="100%">
+  <img src="/log/images/4/image4.6.png" width="70%">
 </p>
 
 7. Scroll down to **Step 2: Add permissions**:
@@ -62,11 +62,11 @@ pre: "<b>4.</b>"
 - After verifying, click **Create role**
 
 <p align="center">
-  <img src="{{ "/images/4/image4.7.png" | relURL }}" width="100%">
+  <img src="/log/images/4/image4.7.png" width="70%">
 </p>
 
 8. The role for the **Lambda Function** has been successfully created
 
 <p align="center">
-  <img src="{{ "/images/4/image4.8.png" | relURL }}" width="100%">
+  <img src="/log/images/4/image4.8.png" width="70%">
 </p>

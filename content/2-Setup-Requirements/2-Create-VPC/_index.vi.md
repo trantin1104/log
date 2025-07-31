@@ -13,7 +13,7 @@ pre: "<b>2.2</b>"
 - Sau đó hãy bấm vào chọn **VPC**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.1.png" | relURL }}" width="70%">
+  <img src="/log/images/2/2.2/image2.2.1.png" width="70%">
 </p>
 
 2. Trong giao diện **VPC**
@@ -21,7 +21,7 @@ pre: "<b>2.2</b>"
 - Bấm vào **Create VPC**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.2.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.2.png" width="70%">
 </p>
 
 3. Trong giao diện **Create VPC**
@@ -29,25 +29,25 @@ pre: "<b>2.2</b>"
 - Nhập vào `lambda-lab`
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.3.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.3.png" width="70%">
 </p>
 
 4. Kéo xuống dưới cùng vào nhấn vào **Create VPC**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.4.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.4.png" width="70%">
 </p>
 
 5. Chọn vào View VPC
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.5.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.5.png" width="70%">
 </p>
 
 6. Đã tạo thành công **VPC**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.6.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.6.png" width="70%">
 </p>
 
 7. Tiếp theo trong giao diện **VPC** 
@@ -57,17 +57,17 @@ pre: "<b>2.2</b>"
 - Cuối cùng bấm vào **Edit subnet settings**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.7.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.7.png" width="70%">
 </p>
 
 8. Bấm chọn vào **Enable auto-asign public IPv4 address**, rồi chọn vào **Save**
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.8.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.8.png" width="70%">
 </p>
 
 9. Đã bật thành công 
 
 <p align="center">
-  <img src="{{ "/images/2/2.2/image2.2.9.png" | relURL }}" width="100%">
+  <img src="/log/images/2/2.2/image2.2.9.png" width="70%">
 </p>

@@ -11,7 +11,7 @@ pre: "<b>1.</b>"
 Trong quá trình sử dụng hạ tầng đám mây **AWS**, nhiều doanh nghiệp thường gặp tình trạng **lãng phí tài nguyên**, đặc biệt là các **EC2 instance chạy liên tục** mà không thực sự cần thiết. Việc không giám sát và tối ưu những instance này có thể dẫn đến **chi phí vận hành tăng cao** một cách không kiểm soát.
 
 <p align="center">
-  <img src="{{ "/images/1/image1.png" | relURL }}" width="70%">
+  <img src="/log/images/1/image1.png" width="70%">
 </p>
 
 ## Mục tiêu Workshop

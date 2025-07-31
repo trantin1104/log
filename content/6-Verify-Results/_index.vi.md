@@ -10,7 +10,7 @@ pre: "<b>6.</b>"
 1. Kiểm tra giao diện **EC2** và trạng thái **instance**
 
 <p align="center">
-  <img src="{{ "/images/6/image6.1.png" | relURL }}" width="100%">
+  <img src="/log/images/6/image6.1.png" width="70%">
 </p>
 
 2. Vào chức năng **Lambda Function** và thực hiện chức năng **stop instance**
@@ -28,25 +28,25 @@ pre: "<b>6.</b>"
 - Chọn **Test**
 
 <p align="center">
-  <img src="{{ "/images/6/image6.2.png" | relURL }}" width="100%">
+  <img src="/log/images/6/image6.2.png" width="70%">
 </p>
 
 3. Trả về kết quả thành công
 
 <p align="center">
-  <img src="{{ "/images/6/image6.3.png" | relURL }}" width="100%">
+  <img src="/log/images/6/image6.3.png" width="70%">
 </p>
 
 4. Kiểm tra trong workspace của **Slack** đã nhận được thông báo **Stopped instance**
 
 <p align="center">
-  <img src="{{ "/images/6/image6.4.png" | relURL }}" width="100%">
+  <img src="/log/images/6/image6.4.png" width="70%">
 </p>
 
 5. Kiểm tra lại trang thái **instance** ở giao diện **EC2**
 
 <p align="center">
-  <img src="{{ "/images/6/image6.5.png" | relURL }}" width="100%">
+  <img src="/log/images/6/image6.5.png" width="70%">
 </p>
 
 ### Kiểm tra kết quả Start
@@ -66,23 +66,23 @@ pre: "<b>6.</b>"
 - Chọn **Test**
 
 <p align="center">
-  <img src="{{ "/images/6/image6.6.png" | relURL }}" width="100%">
+  <img src="/log/images/6/image6.6.png" width="70%">
 </p>
 
 7. Trả về kết quả thành công
 
 <p align="center">
-  <img src="{{ "/images/6/image6.7.png" | relURL }}" width="100%">
+  <img src="/log/images/6/image6.7.png" width="70%">
 </p>
 
 8. Kiểm tra trong workspace của **Slack** đã nhận được thông báo **Started instance**
 
 <p align="center">
-  <img src="{{ "/images/6/image6.8.png" | relURL }}" width="100%">
+  <img src="/log/images/6/image6.8.png" width="70%">
 </p>
 
 9. Kiểm tra lại trang thái **instance** ở giao diện **EC2**
 
 <p align="center">
-  <img src="{{ "/images/6/image6.9.png" | relURL }}" width="100%">
+  <img src="/log/images/6/image6.9.png" width="70%">
 </p>

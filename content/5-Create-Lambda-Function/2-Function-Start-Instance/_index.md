@@ -13,14 +13,14 @@ pre: "<b>5.2</b>"
    - Then click to select **Lambda**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.1.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.1.png" width="70%">
 </p>
 
 2. In **Lambda**, under **Functions**  
    - Click **Create function**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.2.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.2.png" width="70%">
 </p>
 
 3. In the **Create function** interface  
@@ -30,7 +30,7 @@ pre: "<b>5.2</b>"
    - For **Architecture**, select **x86_64**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.3.1.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.3.1.png" width="70%">
 </p>
 
 4. Continue in the **Create function** interface  
@@ -40,7 +40,7 @@ pre: "<b>5.2</b>"
    - Complete by clicking **Create function**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.4.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.4.png" width="70%">
 </p>
 
 5. After successfully creating the function  
@@ -49,7 +49,7 @@ pre: "<b>5.2</b>"
    - Click **Edit**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.5.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.5.png" width="70%">
 </p>
 
 6. In the **Edit environment variables** interface  
@@ -58,13 +58,13 @@ pre: "<b>5.2</b>"
    - Click **Save** to complete
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.6.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.6.png" width="70%">
 </p>
 
 7. After successfully creating the function, proceed to the **code** section
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.7.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.7.png" width="70%">
 </p>
 
 8. In the **Code source** interface  
@@ -151,7 +151,7 @@ def sent_slack(action_result, action):
 - After adding the webhook URL, click **Deploy**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.8.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.8.png" width="70%">
 </p>
 
 9. Go to **Amazon EventBridge**  
@@ -159,7 +159,7 @@ def sent_slack(action_result, action):
 - Click **Create rule**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.9.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.9.png" width="70%">
 </p>
 
 10. In the **Define rule detail** section of the **Create rule** interface  
@@ -169,7 +169,7 @@ def sent_slack(action_result, action):
 - Click **Continue to create rule**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.10.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.10.png" width="70%">
 </p>
 
 11. In the **Schedule pattern** section  
@@ -189,7 +189,7 @@ def sent_slack(action_result, action):
 | Year         | `*`    | Every year                           |
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.11.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.11.png" width="70%">
 </p>
 
 - Then click **Next**
@@ -202,17 +202,17 @@ def sent_slack(action_result, action):
 - Click **Next**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.12.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.12.png" width="70%">
 </p>
 
 13. Review and complete by clicking **Create rule**
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.13.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.13.png" width="70%">
 </p>
 
 14. The rule for starting instances has been successfully created
 
 <p align="center">
-  <img src="{{ "/images/5/5.2/image5.2.14.png" | relURL }}" width="100%">
+  <img src="/log/images/5/5.2/image5.2.14.png" width="70%">
 </p>

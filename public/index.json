@@ -1,104 +1,104 @@
 [
 {
-	"uri": "http://localhost:1313/log/2-setup-requirements/1-configure-slack-webhooks/",
+	"uri": "https://trantin1104.github.io/log/2-setup-requirements/1-configure-slack-webhooks/",
 	"title": " Configure Slack Web-hooks",
 	"tags": [],
 	"description": "",
 	"content": "Guide to using WEB-HOOKS on SLACK First, log in to Slack.com via your browser. This is the main interface of Slack after successful login. Next, access Incoming WebHooks and click Add to Slack. When clicked, you’ll be prompted to Create Another Workspace. Click on it.\nThis is the interface that appears after clicking Create Another Workspace. Enter the name aws-lambda-labs and then select Following.\nNext, enter your name and click Following. Skip this step if you are working alone. Done. "
 },
 {
-	"uri": "http://localhost:1313/log/5-create-lambda-function/1-function-stop-instance/",
+	"uri": "https://trantin1104.github.io/log/5-create-lambda-function/1-function-stop-instance/",
 	"title": " Function to Stop Instances",
 	"tags": [],
 	"description": "",
 	"content": "Create a Lambda Function to Stop Instances Go to AWS Management Console Search for Lambda Then click to select Lambda In the Functions section of Lambda Select Create function In the Create function interface Select Author from scratch In Function name, enter dc-common-lambda-auto-stop In Runtime, select Python 3.13 For Architecture, select x86_64 Continue in the Create function interface Select Change default execution role In Execution role, choose Use an existing role In Existing role, select the IAM role you created earlier Finish by clicking Create function After successfully creating the function Go to Configuration On the left sidebar, select Environment variables Click Edit In the Edit environment variables interface Click Add environment variable In the Edit environment variables interface In Key, enter environment_auto In Value, enter true Click Save to complete After creating successfully, move to the code section In the Code source interface Import the source code: You must change webhook_url to receive notifications in Slack. import boto3 import os import json import urllib3 from datetime import datetime, timedelta, timezone ec2_resource = boto3.resource(\u0026#39;ec2\u0026#39;) http = urllib3.PoolManager() webhook_url = \u0026#34;https://hooks.slack.com/services/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\u0026#34; ACTION_VERB = { \u0026#34;start\u0026#34;: \u0026#34;Started\u0026#34;, \u0026#34;stop\u0026#34;: \u0026#34;Stopped\u0026#34; } def lambda_handler(event, context): environment_auto = os.environ.get(\u0026#39;environment_auto\u0026#39;) action = event.get(\u0026#39;action\u0026#39;, \u0026#39;\u0026#39;).lower() print(f\u0026#34;[DEBUG] environment_auto = {environment_auto}\u0026#34;) print(f\u0026#34;[DEBUG] action = {action}\u0026#34;) if not environment_auto: return { \u0026#34;statusCode\u0026#34;: 400, \u0026#34;body\u0026#34;: \u0026#34;Missing environment_auto\u0026#34; } if action not in [\u0026#39;start\u0026#39;, \u0026#39;stop\u0026#39;]: return { \u0026#34;statusCode\u0026#34;: 400, \u0026#34;body\u0026#34;: \u0026#34;Invalid action. Must be \u0026#39;start\u0026#39; or \u0026#39;stop\u0026#39;.\u0026#34; } instances = ec2_resource.instances.filter( Filters=[{\u0026#39;Name\u0026#39;: \u0026#39;tag:environment_auto\u0026#39;, \u0026#39;Values\u0026#39;: [environment_auto]}] ) instance_list = list(instances) print(f\u0026#34;[DEBUG] Instances found: {instance_list}\u0026#34;) if not instance_list: print(f\u0026#34;[INFO] No EC2 instances found for action \u0026#39;{action}\u0026#39;\u0026#34;) return { \u0026#34;statusCode\u0026#34;: 404, \u0026#34;body\u0026#34;: \u0026#34;No EC2 instances found\u0026#34; } action_results = [] for instance in instance_list: if action == \u0026#39;start\u0026#39;: result = instance.start() else: result = instance.stop() action_results.append(result) sent_slack(action, action_results) return { \u0026#34;statusCode\u0026#34;: 200, \u0026#34;body\u0026#34;: f\u0026#34;{ACTION_VERB[action]} {len(instance_list)} EC2 instance(s)\u0026#34; } def sent_slack(action, action_results): instance_ids = [] key = \u0026#34;StartingInstances\u0026#34; if action == \u0026#34;start\u0026#34; else \u0026#34;StoppingInstances\u0026#34; for result in action_results: if key in result and len(result[key]) \u0026gt; 0: for i in result[key]: instance_ids.append(i[\u0026#34;InstanceId\u0026#34;]) if instance_ids: now = datetime.now(timezone.utc) + timedelta(hours=7) current_time = now.strftime(\u0026#34;%H:%M:%S %d-%m-%Y\u0026#34;) instance_list_str = \u0026#34;\\n• \u0026#34; + \u0026#34;\\n• \u0026#34;.join(instance_ids) msg = ( f\u0026#34;{\u0026#39;✅ Started\u0026#39; if action == \u0026#39;start\u0026#39; else \u0026#39;⛔ Stopped\u0026#39;} EC2 Instances:\\n\u0026#34; f\u0026#34;{instance_list_str}\\n\u0026#34; f\u0026#34;🕒 Time: {current_time} (Asia/Ho_Chi_Minh)\u0026#34; ) data = {\u0026#34;text\u0026#34;: msg} r = http.request(\u0026#34;POST\u0026#34;, webhook_url, body=json.dumps(data), headers={\u0026#34;Content-Type\u0026#34;: \u0026#34;application/json\u0026#34;}) print(f\u0026#34;[DEBUG] Slack response status: {r.status}\u0026#34;) else: print(f\u0026#34;[INFO] No instances {ACTION_VERB[action]}\u0026#34;) After adding the webhook URL, click Deploy Go to AWS Management Console Search for Amazon EventBridge Then click to select Amazon EventBridge In the Rules interface Select Create rule In the Define rule detail section of the Create rule interface In Name, enter dc-common-lambda-auto-stop In Description, enter dc-common-lambda-auto-stop Select Schedule Click Continue to create rule In the Schedule pattern section In Occurrence, select Recurring schedule In Time zone, select (UTC+07:00) Asia/Saigon You want the EventBridge Rule to stop instances at 17:00 every day from Monday to Friday (excluding Saturday and Sunday) in Vietnam time (ICT, UTC+7).\nOn AWS EventBridge, cron uses UTC, so you must subtract 7 hours.\nIn Schedule type, select Cron-based schedule Enter the following Cron expression: Field Value Meaning Minutes 0 At minute 00 Hours 10 10:00 UTC (17:00 Vietnam) Day of month ? Ignore day of month Month * Every month Day of week 2-6 Monday through Friday Year * Every year Then click Next In the Select target(s) section Select AWS service In Select a target, choose Lambda function In Function, select dc-common-lambda-auto-stop In Execution role, check Use existing role and select dc-common-lambda-role Click Next Review everything and click Create rule to complete The rule for stopping instances has been successfully created "
 },
 {
-	"uri": "http://localhost:1313/log/1-introduction/",
+	"uri": "https://trantin1104.github.io/log/1-introduction/",
 	"title": " INTRODUCTION",
 	"tags": [],
 	"description": "",
 	"content": "INTRODUCTION When using AWS cloud infrastructure, many organizations face resource wastage, especially with EC2 instances running unnecessarily outside of working hours. Failing to monitor and optimize these instances can lead to significant operational costs.\nWorkshop Objective The “Optimize EC2 Cost with Lambda” workshop is designed to help users:\nAutomate starting/stopping EC2 instances based on schedules or conditions. Use AWS Lambda to manage EC2 resources without provisioning or managing servers (serverless). Minimize cloud infrastructure costs through simple and reusable automation steps. 💡 AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers.\n"
 },
 {
-	"uri": "http://localhost:1313/log/",
+	"uri": "https://trantin1104.github.io/log/",
 	"title": " OPTIMIZE COST WITH LAMBDA",
 	"tags": [],
 	"description": "",
 	"content": "OPTIMIZE COST WITH LAMBDA Overview In an AWS environment, Amazon EC2 is one of the most widely used services—and also a major source of cost if not managed effectively. The “Optimize EC2 Cost with Lambda” workshop is designed to help you automate EC2 cost management by using AWS Lambda to shut down EC2 instances when they are not needed—such as outside business hours.\nThrough this workshop, you will learn how to:\nTag EC2 instances to identify which ones should be optimized. Create an IAM Role that allows Lambda to control EC2. Write a Lambda function to automatically start/stop EC2 instances based on a schedule. Verify the results and clean up resources. Objectives This workshop helps participants:\nUnderstand how to integrate Lambda with EC2. Optimize EC2 usage costs. Increase automation in cloud infrastructure operations. Requirements To complete this workshop, you’ll need:\nAn AWS account with AdministratorAccess permissions. Basic knowledge of EC2, IAM, and Lambda. A web browser and stable internet connection. Workshop Modules Introduction Setup Requirements Create Tag For Instances Create IAM Role for Lambda Create Lambda Function Verify Results Clean Up Resources "
 },
 {
-	"uri": "http://localhost:1313/log/2-setup-requirements/2-create-vpc/",
+	"uri": "https://trantin1104.github.io/log/2-setup-requirements/2-create-vpc/",
 	"title": " Create VPC",
 	"tags": [],
 	"description": "",
 	"content": "Guide to Creating a VPC Go to the AWS Management Console Type VPC in the search bar Then click on VPC In the VPC interface: First, select Your VPCs Click on Create VPC In the Create VPC interface: Select VPC and more Enter lambda-lab as the name Scroll to the bottom and click Create VPC Click on View VPC VPC has been successfully created Next, in the VPC interface: Select Subnets Click on the public subnet Click Actions Finally, select Edit subnet settings Check the box for Enable auto-assign public IPv4 address, then click Save Successfully enabled "
 },
 {
-	"uri": "http://localhost:1313/log/2-setup-requirements/",
+	"uri": "https://trantin1104.github.io/log/2-setup-requirements/",
 	"title": " SETUP REQUIREMENTS",
 	"tags": [],
 	"description": "",
 	"content": "SETUP REQUIREMENTS Configure Slack Webhooks Create VPC Create Security Group Create EC2 Instance "
 },
 {
-	"uri": "http://localhost:1313/log/5-create-lambda-function/2-function-start-instance/",
+	"uri": "https://trantin1104.github.io/log/5-create-lambda-function/2-function-start-instance/",
 	"title": "Function to Start Instances",
 	"tags": [],
 	"description": "",
 	"content": "Create a Lambda Function to Start Instances Go to AWS Management Console Search for Lambda Then click to select Lambda In Lambda, under Functions Click Create function In the Create function interface Select Author from scratch Set Function name to dc-common-lambda-auto-start In Runtime, choose Python 3.13 For Architecture, select x86_64 Continue in the Create function interface Click Change default execution role In Execution role, select Use an existing role In Existing role, choose the IAM role you just created Complete by clicking Create function After successfully creating the function Select Configuration In the left sidebar, choose Environment variables Click Edit In the Edit environment variables interface Enter environment_auto for Key Enter true for Value Click Save to complete After successfully creating the function, proceed to the code section In the Code source interface Import the source code: You need to change the webhook_url to receive notifications on Slack. import boto3 import os import json import urllib3 from datetime import datetime, timedelta, timezone ec2_resource = boto3.resource(\u0026#39;ec2\u0026#39;) http = urllib3.PoolManager() webhook_url = \u0026#34;https://hooks.slack.com/services/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\u0026#34; def lambda_handler(event, context): environment_auto = os.environ.get(\u0026#39;environment_auto\u0026#39;) action = event.get(\u0026#34;action\u0026#34;, \u0026#34;\u0026#34;).lower() print(f\u0026#34;[DEBUG] environment_auto = {environment_auto}\u0026#34;) print(f\u0026#34;[DEBUG] action = {action}\u0026#34;) if not environment_auto or action not in [\u0026#34;start\u0026#34;, \u0026#34;stop\u0026#34;]: return { \u0026#34;statusCode\u0026#34;: 400, \u0026#34;body\u0026#34;: \u0026#34;Missing environment_auto or invalid action\u0026#34; } instances = ec2_resource.instances.filter( Filters=[{\u0026#39;Name\u0026#39;: \u0026#39;tag:environment_auto\u0026#39;, \u0026#39;Values\u0026#39;: [environment_auto]}] ) instance_list = list(instances) print(f\u0026#34;[DEBUG] Instances found: {instance_list}\u0026#34;) if not instance_list: return { \u0026#34;statusCode\u0026#34;: 404, \u0026#34;body\u0026#34;: \u0026#34;No EC2 instances found\u0026#34; } action_result = [] for instance in instance_list: if action == \u0026#34;start\u0026#34;: result = instance.start() else: result = instance.stop() action_result.append(result) sent_slack(action_result, action) return { \u0026#34;statusCode\u0026#34;: 200, \u0026#34;body\u0026#34;: f\u0026#34;{action.capitalize()}ed {len(instance_list)} EC2 instance(s)\u0026#34; } def sent_slack(action_result, action): instance_ids = [] key = \u0026#34;StartingInstances\u0026#34; if action == \u0026#34;start\u0026#34; else \u0026#34;StoppingInstances\u0026#34; for result in action_result: if key in result and len(result[key]) \u0026gt; 0: for i in result[key]: instance_ids.append(i[\u0026#34;InstanceId\u0026#34;]) if instance_ids: now = datetime.now(timezone.utc) + timedelta(hours=7) current_time = now.strftime(\u0026#34;%H:%M:%S %d-%m-%Y\u0026#34;) msg = f\u0026#34;{\u0026#39;✅ Starting\u0026#39; if action == \u0026#39;start\u0026#39; else \u0026#39;⛔ Stopping\u0026#39;} Instances ID:\\n{instance_ids}\\n🕒 Time: {current_time} (Asia/Ho_Chi_Minh)\u0026#34; data = {\u0026#34;text\u0026#34;: msg} r = http.request(\u0026#34;POST\u0026#34;, webhook_url, body=json.dumps(data), headers={\u0026#34;Content-Type\u0026#34;: \u0026#34;application/json\u0026#34;}) print(f\u0026#34;[DEBUG] Slack response status: {r.status}\u0026#34;) else: print(f\u0026#34;[INFO] No instances {action}ed\u0026#34;) After adding the webhook URL, click Deploy Go to Amazon EventBridge Select Rules Click Create rule In the Define rule detail section of the Create rule interface For Name, enter dc-common-lambda-auto-start For Description, enter dc-common-lambda-auto-start Choose Schedule Click Continue to create rule In the Schedule pattern section For Occurrence, choose Recurring schedule For Time zone, select (UTC+07:00) Asia/Saigon\nYou want the EventBridge Rule to trigger at 9:00 AM every Monday to Friday (excluding Saturday and Sunday) in Vietnam Time (ICT, UTC+7). On AWS EventBridge, cron uses UTC, so subtract 7 hours. For Schedule type, select Cron-based schedule In the Cron expression, configure as follows: Field Value Description Minutes 0 At minute 00 Hours 2 2:00 UTC (9:00 AM Vietnam time) Day of month ? Ignore the day of the month Month * Every month Day of week 2-6 Monday through Friday Year * Every year Then click Next In the Select target(s) section Select AWS service For Select a target, choose Lambda function For Function, select dc-common-lambda-auto-stop For Execution role, check Use existing role and select dc-common-lambda-role Click Next Review and complete by clicking Create rule The rule for starting instances has been successfully created "
 },
 {
-	"uri": "http://localhost:1313/log/3-tag-for-instances/",
+	"uri": "https://trantin1104.github.io/log/3-tag-for-instances/",
 	"title": " ADD TAG TO INSTANCE",
 	"tags": [],
 	"description": "",
 	"content": "Add Tag to Instance In the EC2 interface: Select Instances Select lambda-lab-instance Click Actions Choose Instance settings Then select Manage tags In the Manage tags screen: Click Add new tag When the Add new tag interface appears: In the Key field, enter environment_auto In the Value field, enter true Then click Save Success message displayed "
 },
 {
-	"uri": "http://localhost:1313/log/2-setup-requirements/3-create-security-gruop/",
+	"uri": "https://trantin1104.github.io/log/2-setup-requirements/3-create-security-gruop/",
 	"title": " Create Security Group",
 	"tags": [],
 	"description": "",
 	"content": "Guide to Creating a Security Group In the VPC interface: Select Security Groups Then click Create security group In the Create security group screen: Enter lambda-lab for the Security group name Enter security group for lambda lab for the Description In the VPC field, select the VPC you just created Continue to the Inbound rules section: Click Add rule Configure Inbound rules and Outbound rules Click Create security group "
 },
 {
-	"uri": "http://localhost:1313/log/2-setup-requirements/4-create-ec2-instance/",
+	"uri": "https://trantin1104.github.io/log/2-setup-requirements/4-create-ec2-instance/",
 	"title": " Create EC2 Instance",
 	"tags": [],
 	"description": "",
 	"content": "Guide to Creating an EC2 Instance Go to the AWS Management Console Search for EC2 Then click on EC2 In the EC2 interface: Select Instances Then click on Launch Instance In the Launch Instance interface: In the Name field, enter lambda-lab-instance Choose Amazon Linux Select Amazon Linux 2023 kernel-6.12 AMI Under Instance type: Choose t2.micro Next, under Key pair: Select Create new key pair In the Create key pair screen: Enter lambda-lab-key for Key pair name Click Create key pair In the Network settings section: Click Edit In the Edit section of Network settings: Select the VPC you created earlier Select the public subnet you created Under Auto-assign public IP, choose Enable Then choose Select existing security group Select the Security Group you created Once completed, click Launch instance The EC2 instance has been successfully created Note: After creating the EC2 instance, wait a few minutes for the instance to enter the \u0026ldquo;running\u0026rdquo; state and for internal services to fully start. Only then should you SSH into it or access any hosted web server (if applicable).\n"
 },
 {
-	"uri": "http://localhost:1313/log/4-create-iam-role-for-lambda/",
+	"uri": "https://trantin1104.github.io/log/4-create-iam-role-for-lambda/",
 	"title": " CREATE IAM ROLE FOR LAMBDA",
 	"tags": [],
 	"description": "",
 	"content": "Create IAM Role for Lambda Go to the AWS Management Console Search for IAM Then click on IAM In the IAM interface: Click on Roles Then click Create role in the Roles interface In the Select trusted entity screen: Under Trusted entity type, select AWS service For Use case, select Lambda Then click Next Next, in the Add permissions screen: Search for CloudWatchFullAccess Select CloudWatchFullAccess Continue the same steps: Search for CloudWatchFullAccess Select CloudWatchFullAccess Then click Next In the Name, review, and create screen: Enter dc-common-lambda-role for Role name Scroll down to Step 2: Add permissions: Check the Policy name in the Permissions policy summary After verifying, click Create role The role for the Lambda Function has been successfully created "
 },
 {
-	"uri": "http://localhost:1313/log/5-create-lambda-function/",
+	"uri": "https://trantin1104.github.io/log/5-create-lambda-function/",
 	"title": " CREATE LAMBDA FUNCTION",
 	"tags": [],
 	"description": "",
 	"content": "Create Lambda Function Next, we’ll practice creating two Lambda functions — a crucial step in deploying the system.\nCreate a Lambda Function to stop instances Create a Lambda Function to start instances "
 },
 {
-	"uri": "http://localhost:1313/log/6-verify-results/",
+	"uri": "https://trantin1104.github.io/log/6-verify-results/",
 	"title": " CHECK RESULTS",
 	"tags": [],
 	"description": "",
 	"content": "Check Stop Results Check the EC2 interface and the instance status Go to the Lambda Function and execute the stop instance function Click Test Select Create new event In the Event name field, enter instance-stop In the Event JSON section, enter: {\r\u0026#34;action\u0026#34;: \u0026#34;stop\u0026#34;\r} Click Save Click Test A successful result is returned Check your Slack workspace to confirm that a Stopped instance notification has been received Recheck the instance status in the EC2 interface Check Start Results Similarly, go to the Lambda Function and execute the start instance function Click Test Select Create new event In the Event name field, enter instance-start In the Event JSON section, enter: {\r\u0026#34;action\u0026#34;: \u0026#34;start\u0026#34;\r} Click Save Click Test A successful result is returned Check your Slack workspace to confirm that a Started instance notification has been received Recheck the instance status in the EC2 interface "
 },
 {
-	"uri": "http://localhost:1313/log/categories/",
+	"uri": "https://trantin1104.github.io/log/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/log/tags/",
+	"uri": "https://trantin1104.github.io/log/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title> TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA on Tạo mới tài khoản AWS</title>
-    <link>http://localhost:1313/log/vi/</link>
+    <link>https://trantin1104.github.io/log/vi/</link>
     <description>Recent content in  TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA on Tạo mới tài khoản AWS</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/log/vi/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://trantin1104.github.io/log/vi/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
