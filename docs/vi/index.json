@@ -91,6 +91,13 @@
 	"content": "Kiểm tra kết quả Stop Kiểm tra giao diện EC2 và trạng thái instance Vào chức năng Lambda Function và thực hiện chức năng stop instance Chọn Test Chọn Create new event Ở dòng Event name nhập instance-stop Ở phần Event JSON nhập vào {\r\u0026#34;action\u0026#34;: \u0026#34;stop\u0026#34;\r} Chọn Save Chọn Test Trả về kết quả thành công Kiểm tra trong workspace của Slack đã nhận được thông báo Stopped instance Kiểm tra lại trang thái instance ở giao diện EC2 Kiểm tra kết quả Start Tương tự, truy cập vào Lambda Function và thực hiện chức năng start instance Chọn Test Chọn Create new event Ở dòng Event name nhập instance-start Ở phần Event JSON nhập vào {\r\u0026#34;action\u0026#34;: \u0026#34;start\u0026#34;\r} Chọn Save Chọn Test Trả về kết quả thành công Kiểm tra trong workspace của Slack đã nhận được thông báo Started instance Kiểm tra lại trang thái instance ở giao diện EC2 "
 },
 {
+	"uri": "https://trantin1104.github.io/log/vi/7-cleanup-resources/",
+	"title": " DỌN DẸP TÀI NGUYÊN",
+	"tags": [],
+	"description": "",
+	"content": "Dọn dẹp tài nguyên Xóa Lambda function Truy cập vào trang AWS Lambda Chọn các function vừa thực hiện trong bài lab Xóa hết những function đó Xóa Amazon EvenBridge Events Rule Truy cập vào trang Amazon EvenBridge Chọn Rules Chọn các Rules vừa tạo của bài lab Xóa hết những Rules đó "
+},
+{
 	"uri": "https://trantin1104.github.io/log/vi/categories/",
 	"title": "Categories",
 	"tags": [],

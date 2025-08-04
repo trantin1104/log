@@ -91,6 +91,13 @@
 	"content": "Check Stop Results Check the EC2 interface and the instance status Go to the Lambda Function and execute the stop instance function Click Test Select Create new event In the Event name field, enter instance-stop In the Event JSON section, enter: {\r\u0026#34;action\u0026#34;: \u0026#34;stop\u0026#34;\r} Click Save Click Test A successful result is returned Check your Slack workspace to confirm that a Stopped instance notification has been received Recheck the instance status in the EC2 interface Check Start Results Similarly, go to the Lambda Function and execute the start instance function Click Test Select Create new event In the Event name field, enter instance-start In the Event JSON section, enter: {\r\u0026#34;action\u0026#34;: \u0026#34;start\u0026#34;\r} Click Save Click Test A successful result is returned Check your Slack workspace to confirm that a Started instance notification has been received Recheck the instance status in the EC2 interface "
 },
 {
+	"uri": "https://trantin1104.github.io/log/7-cleanup-resources/",
+	"title": " CLEAN UP RESOURCES",
+	"tags": [],
+	"description": "",
+	"content": "Clean Up Resources Delete Lambda Functions Go to the AWS Lambda console Select the functions you created for this lab Delete all those functions Delete Amazon EventBridge Event Rules Go to the Amazon EventBridge console Select Rules Choose the Rules created in this lab Delete all those Rules "
+},
+{
 	"uri": "https://trantin1104.github.io/log/categories/",
 	"title": "Categories",
 	"tags": [],
