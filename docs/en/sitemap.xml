@@ -171,17 +171,30 @@
                 href="https://trantin1104.github.io/log/6-verify-results/"
                 />
   </url><url>
-    <loc>https://trantin1104.github.io/log/7-cleanup-resources/</loc>
+    <loc>https://trantin1104.github.io/log/7-add-trigger-to-lambda-function/</loc>
     <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://trantin1104.github.io/log/vi/7-cleanup-resources/"
+                href="https://trantin1104.github.io/log/vi/7-add-trigger-to-lambda-function/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://trantin1104.github.io/log/7-cleanup-resources/"
+                href="https://trantin1104.github.io/log/7-add-trigger-to-lambda-function/"
+                />
+  </url><url>
+    <loc>https://trantin1104.github.io/log/8-cleanup-resources/</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trantin1104.github.io/log/vi/8-cleanup-resources/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trantin1104.github.io/log/8-cleanup-resources/"
                 />
   </url><url>
     <loc>https://trantin1104.github.io/log/categories/</loc>

@@ -25,7 +25,7 @@
 	"title": " TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA",
 	"tags": [],
 	"description": "",
-	"content": "TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA Tổng quan Trong môi trường sử dụng AWS, Amazon EC2 là một trong những dịch vụ phổ biến và cũng là nguồn chi phí lớn nếu không được quản lý hiệu quả. Workshop “Optimize EC2 Cost with Lambda” được thiết kế nhằm giúp bạn tự động hóa việc quản lý chi phí EC2 bằng cách sử dụng AWS Lambda để tắt các EC2 instance khi không cần thiết – ví dụ ngoài giờ hành chính.\nThông qua workshop này, bạn sẽ học được cách:\nGắn thẻ (tag) cho các EC2 instance để phân biệt instance cần tối ưu. Tạo IAM Role để Lambda có thể kiểm soát EC2. Viết hàm Lambda bật/tắt EC2 tự động theo lịch trình. Kiểm tra kết quả và dọn dẹp tài nguyên. Mục tiêu Giúp người học:\nNắm được cách tích hợp Lambda với EC2. Tối ưu hóa chi phí sử dụng EC2. Tăng tính tự động hóa trong vận hành hạ tầng cloud. Điều kiện cần Để thực hiện workshop này, bạn cần có:\nTài khoản AWS có quyền quản trị (AdministratorAccess). Kiến thức cơ bản về EC2, IAM và Lambda. Trình duyệt web và kết nối Internet ổn định. Nội dung chính Giới thiệu Các bước chuẩn bị Tạo tag cho instance Tạo IAM role cho Lambda Tạo Lambda Function Kiểm tra kết quả Dọn dẹp tài nguyên "
+	"content": "TỐI ƯU HÓA CHI PHÍ VỚI LAMBDA Tổng quan Trong môi trường sử dụng AWS, Amazon EC2 là một trong những dịch vụ phổ biến và cũng là nguồn chi phí lớn nếu không được quản lý hiệu quả. Workshop “Optimize EC2 Cost with Lambda” được thiết kế nhằm giúp bạn tự động hóa việc quản lý chi phí EC2 bằng cách sử dụng AWS Lambda để tắt các EC2 instance khi không cần thiết – ví dụ ngoài giờ hành chính.\nThông qua workshop này, bạn sẽ học được cách:\nGắn thẻ (tag) cho các EC2 instance để phân biệt instance cần tối ưu. Tạo IAM Role để Lambda có thể kiểm soát EC2. Viết hàm Lambda bật/tắt EC2 tự động theo lịch trình. Kiểm tra kết quả và dọn dẹp tài nguyên. Mục tiêu Giúp người học:\nNắm được cách tích hợp Lambda với EC2. Tối ưu hóa chi phí sử dụng EC2. Tăng tính tự động hóa trong vận hành hạ tầng cloud. Điều kiện cần Để thực hiện workshop này, bạn cần có:\nTài khoản AWS có quyền quản trị (AdministratorAccess). Kiến thức cơ bản về EC2, IAM và Lambda. Trình duyệt web và kết nối Internet ổn định. Nội dung chính Giới thiệu Các bước chuẩn bị Tạo tag cho instance Tạo IAM role cho Lambda Tạo Lambda Function Kiểm tra kết quả Thêm Trigger cho Lambda Function Dọn dẹp tài nguyên "
 },
 {
 	"uri": "https://trantin1104.github.io/log/vi/2-setup-requirements/",
@@ -91,7 +91,14 @@
 	"content": "Kiểm tra kết quả Stop Kiểm tra giao diện EC2 và trạng thái instance Vào chức năng Lambda Function và thực hiện chức năng stop instance Chọn Test Chọn Create new event Ở dòng Event name nhập instance-stop Ở phần Event JSON nhập vào {\r\u0026#34;action\u0026#34;: \u0026#34;stop\u0026#34;\r} Chọn Save Chọn Test Trả về kết quả thành công Kiểm tra trong workspace của Slack đã nhận được thông báo Stopped instance Kiểm tra lại trang thái instance ở giao diện EC2 Kiểm tra kết quả Start Tương tự, truy cập vào Lambda Function và thực hiện chức năng start instance Chọn Test Chọn Create new event Ở dòng Event name nhập instance-start Ở phần Event JSON nhập vào {\r\u0026#34;action\u0026#34;: \u0026#34;start\u0026#34;\r} Chọn Save Chọn Test Trả về kết quả thành công Kiểm tra trong workspace của Slack đã nhận được thông báo Started instance Kiểm tra lại trang thái instance ở giao diện EC2 "
 },
 {
-	"uri": "https://trantin1104.github.io/log/vi/7-cleanup-resources/",
+	"uri": "https://trantin1104.github.io/log/vi/7-add-trigger-to-lambda-function/",
+	"title": " THÊM TRIGGER CHO LAMBDA FUNCTION",
+	"tags": [],
+	"description": "",
+	"content": "Thêm Trigger cho Lambda Function Sau khi tạo xong Lambda function, chúng ta cần thêm trigger để tự động kích hoạt function theo lịch định sẵn. Vào chức năng Lambda Function thực hiện Add trigger trên dc-common-lambda-auto-start Ở trang Add trigger Chọn EventBridge (CloudWatch Events) Ở mục Rule chọn Existing rules Ở mục Existing rules chọn dc-common-lambda-auto-start Nhấn Add Đã thêm thành công Tiếp tục vào chức năng Lambda Function thực hiện Add trigger trên dc-common-lambda-auto-stop Ở trang Add trigger Chọn EventBridge (CloudWatch Events) Ở mục Rule chọn Existing rules Ở mục Existing rules chọn dc-common-lambda-auto-stop Nhấn Add Đã thêm thành công Kiểm tra lại kết quả trên Slack Đã bật lúc 7 giờ sáng Đã tắt lúc 5 giờ chiều "
+},
+{
+	"uri": "https://trantin1104.github.io/log/vi/8-cleanup-resources/",
 	"title": " DỌN DẸP TÀI NGUYÊN",
 	"tags": [],
 	"description": "",

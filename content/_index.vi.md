@@ -46,4 +46,5 @@ Giúp người học:
 3. [Tạo IAM role cho Lambda](4-create-iam-role-for-lambda/)
 4. [Tạo Lambda Function](5-create-lambda-function/)
 5. [Kiểm tra kết quả](6-verify-results/)
-6. [Dọn dẹp tài nguyên](7-cleanup-resources/)
+7. [Thêm Trigger cho Lambda Function](7-add-trigger-to-lambda-function/)
+8. [Dọn dẹp tài nguyên](7-cleanup-resources/)

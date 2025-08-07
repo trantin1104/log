@@ -46,5 +46,6 @@ To complete this workshop, you’ll need:
 4. [Create IAM Role for Lambda](4-create-iam-role-for-lambda/)
 5. [Create Lambda Function](5-create-lambda-function/)
 6. [Verify Results](6-verify-results/)
-7. [Clean Up Resources](7-cleanup-resources/)
+7. [Add Trigger to the Lambda Function](7-add-trigger-to-lambda-function/)
+8. [Clean Up Resources](7-cleanup-resources/)
 

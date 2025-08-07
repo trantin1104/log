@@ -1,9 +1,9 @@
 ---
 title: " DỌN DẸP TÀI NGUYÊN"
 date: 2025-07-17
-weight: 7
+weight: 8
 chapter: false
-pre: "<b>7.</b>"
+pre: "<b>8.</b>"
 ---
 
 ### Dọn dẹp tài nguyên
