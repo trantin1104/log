@@ -59,11 +59,11 @@ After creating the Lambda function, we need to add triggers so it can run automa
 - Auto-start executed at 7:00 AM:
 
 <p align="center">
-  <img src="/log/images/7/image7.7.1png" width="70%">
+  <img src="/log/images/7/image7.7.png" width="70%">
 </p>
 
 - Auto-stop executed at 5:00 PM:
 
 <p align="center">
-  <img src="/log/images/7/image7.7.2png" width="70%">
+  <img src="/log/images/7/image7.8.png" width="70%">
 </p>

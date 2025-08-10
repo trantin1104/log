@@ -57,11 +57,11 @@ pre: "<b>7.</b>"
 - Đã bật lúc 7 giờ sáng
 
 <p align="center">
-  <img src="/log/images/7/image7.7.1png" width="70%">
+  <img src="/log/images/7/image7.7.png" width="70%">
 </p>
 
 - Đã tắt lúc 5 giờ chiều
 
 <p align="center">
-  <img src="/log/images/7/image7.7.2png" width="70%">
+  <img src="/log/images/7/image7.8.png" width="70%">
 </p>
